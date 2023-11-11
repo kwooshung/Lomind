@@ -1,0 +1,70 @@
+name: Release to NPM
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: '请选择要发布的项目'
+        required: true
+        type: choice
+        options:
+          - all
+          - core
+          - react
+          - vue
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      # 检出代码
+      - name: checkout
+        uses: actions/checkout@main
+
+      # 全局安装 pnpm
+      - name: install pnpm
+        run: npm install -g pnpm
+
+      # 使用 pnpm 安装依赖
+      - name: install dependencies
+        run: pnpm install
+
+      # 构建
+      - name: build
+        run: pnpm run build:all
+
+      # 设置 Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@main
+        with:
+          node-version: '14.0.0'
+          registry-url: https://registry.npmjs.org/
+
+      # 发布：core
+      - name: Release core
+        if: ${{ github.event.inputs.project == 'core' || github.event.inputs.project == 'all' }}
+        run: |
+          cd packages/core
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 发布：react
+      - name: Release react
+        if: ${{ github.event.inputs.project == 'react' || github.event.inputs.project == 'all' }}
+        run: |
+          cd packages/react
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 发布：vue
+      - name: Release vue
+        if: ${{ github.event.inputs.project == 'vue' || github.event.inputs.project == 'all' }}
+        run: |
+          cd packages/vue
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

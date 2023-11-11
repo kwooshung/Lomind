@@ -1,0 +1,97 @@
+{
+  "name": "@kwooshung/lomind",
+  "version": "0.0.1",
+  "title": "Lomind",
+  "description": "Lomind is not just a practical utility library; it represents a fusion of classic and innovative programming exploration. Drawing from numerous exemplary open-source libraries like Lodash, Lomind extends their powerful functionalities while introducing more modular and high-performance tools, specifically designed for JS, React, and Vue.",
+  "keywords": [
+    "kwooshung",
+    "lomind",
+    "lomindJS",
+    "lomind.JS",
+    "hook",
+    "hooks",
+    "lodash",
+    "lodashJS",
+    "lodash.JS",
+    "underscore",
+    "underscoreJS",
+    "underscore.JS",
+    "utils",
+    "helper"
+  ],
+  "private": true,
+  "author": "kwooshung (https://github.com/kwooshung)",
+  "homepage": "https://github.com/kwooshung/lomind",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwooshung/lomind.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kwooshung/lomind/issues"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "test": "vitest",
+    "test:watch": "vitest watch",
+    "test:ci": "vitest run --coverage",
+    "dev:js": "pnpm --filter core run dev",
+    "dev:react": "pnpm --filter react run dev",
+    "dev:vue": "pnpm --filter vue run dev",
+    "build:all": "pnpm build:js && pnpm build:react && pnpm build:vue",
+    "build:js": "pnpm --filter core run build",
+    "build:react": "pnpm --filter react run build",
+    "build:vue": "pnpm --filter vue run build",
+    "stylelint": "stylelint --fix --cache --quiet --max-warnings 0 --config .stylelintrc.js \"**/*.{css,less,scss,sass,stylus,styl}\"",
+    "eslint": "eslint . --fix --cache --quiet --report-unused-disable-directives --max-warnings 0 --ext .js,.cjs,.jsx,.ts,.cts,.tsx",
+    "commit": "pnpm changelog && git add . && cz-customizable",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 && node scripts/changelogTransformer.cjs",
+    "release": "standard-version-helper"
+  },
+  "config": {
+    "cz-customizable": {
+      "config": "./configs/cz-config.cjs"
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^18.4.0",
+    "@kwooshung/standard-version-helper": "^1.6.1",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@translate-tools/core": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitest/coverage-v8": "^0.34.6",
+    "commitizen": "^4.3.0",
+    "commitlint": "^18.4.0",
+    "commitlint-config-cz": "^0.13.3",
+    "commitlint-config-git-commit-emoji": "^1.0.0",
+    "conventional-changelog": "^5.1.0",
+    "conventional-changelog-cli": "^4.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-vue": "^9.18.1",
+    "husky": "^8.0.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jsdom": "^22.1.0",
+    "less": "^4.2.0",
+    "lint-staged": "^15.0.2",
+    "postcss-less": "^6.0.0",
+    "prettier": "^3.0.3",
+    "semver": "^7.5.4",
+    "standard-version": "^9.5.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-processor-html": "^1.0.0",
+    "terser": "^5.24.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vite-plugin-dts": "^3.6.3",
+    "vitest": "^0.34.6"
+  }
+}
