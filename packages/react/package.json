@@ -1,0 +1,61 @@
+{
+  "name": "lomind-react",
+  "version": "0.0.1",
+  "title": "Lomind for react hooks",
+  "description": "Lomind is not just a practical utility library; it represents a fusion of classic and innovative programming exploration. Drawing from numerous exemplary open-source libraries like Lodash, Lomind extends their powerful functionalities while introducing more modular and high-performance tools, specifically designed for React Hooks.",
+  "keywords": [
+    "kwooshung",
+    "lomind",
+    "lomindJS",
+    "lomind.JS",
+    "React",
+    "React hook",
+    "React hooks",
+    "hook",
+    "hooks",
+    "lodash",
+    "lodashJS",
+    "lodash.JS",
+    "underscore",
+    "underscoreJS",
+    "underscore.JS",
+    "utils"
+  ],
+  "private": false,
+  "author": "kwooshung (https://github.com/kwooshung)",
+  "homepage": "https://github.com/kwooshung/lomind",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwooshung/lomind.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/kwooshung/lomind/issues"
+  },
+  "license": "MIT",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "peerDependencies": {
+    "react": ">=16.6.0",
+    "react-dom": ">=16.6.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.1.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react-swc": "^3.4.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "lomind",
+  "version": "0.0.1",
+  "title": "Lomind.JS",
+  "description": "Lomind is not just a practical utility library; it represents a fusion of classic and innovative programming exploration. Drawing from numerous exemplary open-source libraries like Lodash, Lomind extends their powerful functionalities while introducing more modular and high-performance tools, specifically designed for JS.",
+  "keywords": [
+    "kwooshung",
+    "lomind",
+    "lomindJS",
+    "lomind.JS",
+    "core",
+    "hook",
+    "hooks",
+    "lodash",
+    "lodashJS",
+    "lodash.JS",
+    "underscore",
+    "underscoreJS",
+    "underscore.JS",
+    "utils"
+  ],
+  "private": false,
+  "author": "kwooshung (https://github.com/kwooshung)",
+  "homepage": "https://github.com/kwooshung/lomind",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwooshung/lomind.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/kwooshung/lomind/issues"
+  },
+  "license": "MIT",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  }
+}
