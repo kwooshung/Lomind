@@ -4,7 +4,7 @@
  * @param {number} depth 扁平化的深度
  * @returns {any} 返回一个扁平化后的新数组
  */
-const baseFlatten = (array: any, depth: number = 1): any => {
+const flatten = (array: any, depth: number = 1): any => {
   const result = [];
   const stack = [{ array, index: 0, depth }];
 
@@ -24,4 +24,4 @@ const baseFlatten = (array: any, depth: number = 1): any => {
   return result;
 };
 
-export default baseFlatten;
+export default flatten;

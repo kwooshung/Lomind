@@ -43,7 +43,9 @@
     "build": "tsc && vite build"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.11",
+    "@types/lodash-es": "^4.17.11"
+  },
+  "dependencies": {
     "lodash-es": "^4.17.21"
   }
 }

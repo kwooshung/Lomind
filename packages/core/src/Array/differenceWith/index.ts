@@ -1,4 +1,4 @@
-import { baseFlatten } from '../../../helper';
+import { baseFlatten } from '../../.helper';
 
 /**
  * 创建一个从原始数组中排除了所有给定值的新数组。此方法接受一个 comparator 进行比较和排除。

@@ -1,6 +1,6 @@
 import last from '../last';
 import isArrayLikeObject from '../../Lang/isArrayLikeObject';
-import { baseDifference, baseFlatten } from '../../../helper';
+import { baseDifference, baseFlatten } from '../../.helper';
 
 /**
  * 计算差异数组，该函数会通过 iteratee 处理每个元素后进行比较。
