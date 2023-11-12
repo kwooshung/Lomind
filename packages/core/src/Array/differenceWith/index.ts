@@ -24,7 +24,7 @@ const differenceWith = (array: any, ...values: any[]): any => {
 
   const flattenedValues = baseFlatten(values, 1);
   if (comparator) {
-    return array.filter((arrVal) => !flattenedValues.some((othVal) => comparator(arrVal, othVal)));
+    return array.filter((arrVal) => !flattenedValues.some((othVal: any) => comparator(arrVal, othVal)));
   }
   return array;
 };

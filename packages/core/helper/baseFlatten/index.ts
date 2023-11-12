@@ -5,11 +5,23 @@
  * @returns {any} 返回一个扁平化后的新数组
  */
 const baseFlatten = (array: any, depth: number = 1): any => {
-  if (depth === 1) {
-    return array.reduce((acc: string | any[], val: any) => acc.concat(val), []);
-  }
+  const result = [];
+  const stack = [{ array, index: 0, depth }];
 
-  return array.reduce((acc: string | any[], val: any) => acc.concat(Array.isArray(val) ? baseFlatten(val, depth - 1) : val), []);
+  while (stack.length) {
+    const { array, index, depth }: any = stack.pop();
+    for (let i = index; i < array.length; i++) {
+      const value = array[i];
+      if (Array.isArray(value) && depth > 0) {
+        stack.push({ array, index: i + 1, depth });
+        stack.push({ array: value, index: 0, depth: depth - 1 });
+        break;
+      } else {
+        result.push(value);
+      }
+    }
+  }
+  return result;
 };
 
 export default baseFlatten;

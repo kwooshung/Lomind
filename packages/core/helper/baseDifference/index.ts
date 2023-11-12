@@ -1,7 +1,7 @@
 /**
  * 计算差异数组
  * @param {any} array 待处理的数组
- * @param {any} valuesToExclude 用于比较差异的数组
+ * @param {(element: any) => any} valuesToExclude 用于比较差异的数组
  * @returns {any} 返回一个差异化后的新数组
  */
 const baseDifference = (array: any, valuesToExclude: any, comparator: (element: any) => any): any => {

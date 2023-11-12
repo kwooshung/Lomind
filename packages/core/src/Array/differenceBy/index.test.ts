@@ -24,4 +24,11 @@ describe('differenceBy 函数测试', () => {
   it('当迭代器为非函数时，应正常处理', () => {
     expect(differenceBy([2.1, 1.2], [2.3, 3.4], 'not a function')).toEqual([2.1, 1.2]);
   });
+
+  it('处理默认迭代器的情况', () => {
+    const array = [1.2, 2.4, 3.6];
+    const valuesToExclude = [1.3, 2.5];
+    const result = differenceBy(array, valuesToExclude);
+    expect(result).toEqual([1.2, 2.4, 3.6]);
+  });
 });

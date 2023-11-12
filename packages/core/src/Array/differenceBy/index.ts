@@ -28,7 +28,12 @@ const differenceBy = (array: any, ...values: any) => {
     iteratee = (element: any) => element; // 使用默认的身份函数
   }
 
-  const comparator = typeof iteratee === 'function' ? (element: any) => iteratee(element) : typeof iteratee === 'string' ? (element: any) => element[iteratee] : (element: any) => element;
+  let comparator: any = iteratee;
+  if (typeof iteratee === 'function') {
+    comparator = (element: any) => iteratee(element);
+  } else if (typeof iteratee === 'string') {
+    comparator = (element: any) => element[iteratee];
+  }
 
   return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1), comparator) : [];
 };

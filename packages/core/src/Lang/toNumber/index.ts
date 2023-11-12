@@ -9,30 +9,30 @@ const NAN = 0 / 0;
  * @param {any} value 要处理的值。
  * @returns {*} 转换后的原始类型值。
  */
-function toPrimitive(value: any): unknown {
+const toPrimitive = (value: any): unknown => {
   if (isObject(value)) {
     const primitive = value.valueOf();
     return isObject(primitive) ? value.toString() : primitive;
   }
   return value;
-}
+};
 
 /**
  * 检查并转换特定格式的字符串（二进制、八进制、十六进制）。
  * @param {string} value 要转换的字符串。
  * @returns {number} 数字或 NaN。
  */
-function parseSpecialFormatString(value: string): number {
+const parseSpecialFormatString = (value: string): number => {
   const binaryMatch = value.match(/^0b[01]+$/i);
   const octalMatch = value.match(/^0o[0-7]+$/i);
   const hexMatch = value.match(/^[-+]0x[0-9a-f]+$/i);
 
   if (binaryMatch) return parseInt(binaryMatch[0].substring(2), 2);
   if (octalMatch) return parseInt(octalMatch[0].substring(2), 8);
-  if (hexMatch) return NAN;
+  if (hexMatch) return NaN;
 
   return +value;
-}
+};
 
 /**
  * 将给定值转换为数值。
@@ -62,7 +62,7 @@ function toNumber(value: any): number {
 
   if (typeof value === 'string') return parseSpecialFormatString(value.trim());
 
-  return value === 0 ? value : +value;
+  return +value;
 }
 
 export default toNumber;

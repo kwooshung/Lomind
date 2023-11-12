@@ -20,4 +20,20 @@ describe('difference 函数测试', () => {
   it('应该处理多个对比数组', () => {
     expect(difference([2, 1, 3], [2, 3], [1, 4])).toEqual([]);
   });
+
+  it('如果不是数组或对象', () => {
+    expect(difference('' as any, [2, 3], [1, 4])).toEqual([]);
+  });
+
+  it('处理非类数组对象的输入', () => {
+    const nonArrayLikeObject = { key: 'value' };
+    const result = difference(nonArrayLikeObject as any, [1, 2, 3]);
+    expect(result).toEqual([]);
+  });
+
+  it('处理函数类型的输入', () => {
+    const functionInput = () => {};
+    const result = difference(functionInput as any, [1, 2, 3]);
+    expect(result).toEqual([]);
+  });
 });
