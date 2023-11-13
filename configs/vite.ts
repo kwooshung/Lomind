@@ -20,16 +20,6 @@ const configCss = {
 };
 
 /**
- * 测试配置
- */
-const configTest = {
-  globals: true,
-  setupFiles: '../../configs/vitest-setup.ts',
-  environment: 'jsdom',
-  exclude: ['src/__visual_tests__', '**/node_modules/**', '**/dist/**', '**/cypress/**', '**/.{idea,git,cache,output,temp}/**']
-};
-
-/**
  * TS 类型构建配置
  */
 const configDts = dts({
@@ -69,4 +59,4 @@ const configBuild = (name: string, filename: string, formats: string[], external
   }
 });
 
-export { configServer, configCss, configTest, configDts, configBuild };
+export { configServer, configCss, configDts, configBuild };

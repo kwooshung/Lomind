@@ -7,6 +7,9 @@
 - 增加了 Array 和 Lang 两终分类，实现了部分函数，参数和Lodash一致，实现逻辑和方法，进行了优化。 ([80047b2](https://github.com/kwooshung/lomind/commit/80047b2))
 - 做到这里，感觉直接使用lodash较好，工具库的工作量不小，在此基础上扩展较好 ([a324937](https://github.com/kwooshung/lomind/commit/a324937))
 
+### 📦️ 发布
+- 0.0.2 ([56d94b5](https://github.com/kwooshung/lomind/commit/56d94b5))
+
 ---
 
 ## 🎉 v0.0.1 `2023-11-11`
