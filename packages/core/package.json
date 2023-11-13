@@ -42,10 +42,9 @@
     "dev": "vite",
     "build": "tsc && vite build"
   },
+  "peerDependencies": {},
   "devDependencies": {
-    "@types/lodash-es": "^4.17.11"
-  },
-  "dependencies": {
-    "lodash-es": "^4.17.21"
+    "@types/lodash-es": "^4.17.11",
+    "lodash-es": "^4.0.0"
   }
 }
