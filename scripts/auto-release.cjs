@@ -151,7 +151,7 @@ async function autoRelease() {
       if (changelog) {
         const translatedChangelog = await translateAndReplace(changelog);
 
-        changelog += '\n---\n\n' + translatedChangelog;
+        changelog += '\n---\n\n> 🚩 This `changelog` was auto-translated by Google and may include inaccuracies.\n\n' + translatedChangelog;
 
         if (DEBUG) {
           fs.writeFileSync('RELEASE.Debug.md', changelog);
