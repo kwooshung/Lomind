@@ -1,3 +1,12 @@
+## 🎉 v0.0.3 `2023-11-13`
+### ✅ 测试
+- 更新配置，修改Vitest配置 ([f3f7622](https://github.com/kwooshung/lomind/commit/f3f7622))
+
+### 🚧 开发中
+- 新项目，先在Npm上占位名称 ([4d12762](https://github.com/kwooshung/lomind/commit/4d12762))
+
+---
+
 ## 🎉 v0.0.2 `2023-11-12`
 ### ✅ 测试
 - 搞定 difference differenceBy differenceWith 三个函数，测试100%覆盖率！ ([ea30a2c](https://github.com/kwooshung/lomind/commit/ea30a2c))
