@@ -25,13 +25,16 @@ module.exports = {
   },
   rules: {
     'no-undef': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/no-unused-expressions': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'react/jsx-uses-react': 'off',
     'no-plusplus': 'off',
+    'no-param-reassign': 'off',
     'no-unused-expressions': 'off',
-    'no-param-reassign': 'off'
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/no-unused-expressions': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off'
   }
 };

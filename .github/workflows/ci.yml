@@ -49,6 +49,6 @@ jobs:
 
       # 自动发布
       - name: Auto Release
-        run: node ./scripts/auto-release.cjs
+        run: npx cvlar -r
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

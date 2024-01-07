@@ -13,6 +13,7 @@ dist
 dist-ssr
 coverage
 *.local
+
 # Editor directories and files
 .idea
 .DS_Store
@@ -21,3 +22,6 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# Cvlar
+.cvlar-commit-message-*.tmp
