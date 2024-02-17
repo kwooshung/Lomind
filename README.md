@@ -25,7 +25,7 @@
 
 In the development process of `React` and `Vue`, deciding whether to implement a function as a `hook` or a regular function often poses a dilemma. After all, each implementation has its advantages in different scenarios. `Lomind` aims to eliminate this hesitation by offering a flexible solution that allows developers to choose freely based on their specific needs. Whether you want to use hooks for better state management and handling side effects, or prefer the simplicity and intuitiveness of traditional functions, `Lomind` meets your requirements. In short, `Lomind` offers true freedom of development, making choices no longer a challenge!
 
-
 ## 🔄 Other Versions
-- [路漫漫-React](https://github.com/kwooshung/lomind-react)
-- [路漫漫-Vue](https://github.com/kwooshung/lomind-vue)
+
+- [Lomind-React](https://github.com/kwooshung/Lomind-React)
+- [Lomind-Vue](https://github.com/kwooshung/Lomind-Vue)
