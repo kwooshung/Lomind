@@ -1,0 +1,84 @@
+{
+  "name": "lomind",
+  "version": "0.0.1-beta.1",
+  "title": "lomind",
+  "description": "Lomind is a tool library deeply inspired by Lodash, yet it's not intended to be a direct replacement for Lodash. The reason lies in Lodash's already proven excellence in performance and reliability. Instead, Lomind aims to assimilate the best practices from numerous outstanding open-source libraries while expanding its capabilities. It introduces a greater array of modular and high-performance utilities, particularly tailored for enhanced programming experiences in JavaScript, React Hooks, and Vue Hooks.",
+  "private": false,
+  "tags": [
+    "kwooshung",
+    "lomind",
+    "lodash",
+    "randoms",
+    "algorithms",
+    "string",
+    "math"
+  ],
+  "keywords": [
+    "kwooshung",
+    "lomind",
+    "lodash",
+    "randoms",
+    "algorithms",
+    "string",
+    "math"
+  ],
+  "author": "kwooshung",
+  "homepage": "https://github.com/kwooshung/Lomind",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwooshung/Lomind.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kwooshung/Lomind/issues"
+  },
+  "type": "module",
+  "main": "dist/index.cmd.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cmd.js",
+      "import": "./dist/index.esm.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "tsup --watch",
+    "build": "tsup --minify",
+    "test": "vitest",
+    "test:watch": "vitest watch --coverage",
+    "test:ci": "vitest run --coverage",
+    "eslint": "eslint . --fix --cache --quiet --report-unused-disable-directives --max-warnings 0 --ext .js,.cjs,.jsx,.ts,.cts,.tsx"
+  },
+  "peerDependencies": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@kwooshung/cvlar": "^1.3.7",
+    "@swc/core": "^1.4.1",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@types/node": "^20.11.19",
+    "@types/randomatic": "^3.1.5",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "commitlint": "^18.6.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "swc-loader": "^0.2.6",
+    "terser": "^5.27.1",
+    "ts-loader": "^9.5.1",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3",
+    "vitest": "^1.3.0"
+  },
+  "license": "MIT"
+}
