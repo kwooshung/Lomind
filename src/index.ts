@@ -1,1 +1,2 @@
-// export { default as number } from './number';
+export { default as createInterval } from './createInterval';
+export { default as createTimeout } from './createTimeout';
