@@ -1,3 +1,7 @@
+## 🎉 0.0.1-beta.3 `2024-02-18`
+### 🐛 Fix
+- Update dependence ([#cf11c2b](https://github.com/kwooshung/Lomind/commit/cf11c2ba93de8225a61fd2ecfd388efcbece560c))
+
 ## 🎉 0.0.1-beta.2 `2024-02-18`
 ### ✨ Feature
 - New CreateTimeout & CreateInterval ([#c8cd0c1](https://github.com/kwooshung/files/commit/c8cd0c18b29893fee6e57e0c05158e8586bd9a1a))
@@ -9,4 +13,3 @@
 - Project basic configuration ([#d2210dc](https://github.com/kwooshung/files/commit/d2210dcf798d366476e3024c09a95eb804a4db25))
 ### 🆕 Add
 - Create LICENSE ([#8150c4a](https://github.com/kwooshung/files/commit/8150c4a774d1bb1b16731ecda1e3f95a81929920))
-
