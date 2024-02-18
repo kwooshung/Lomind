@@ -184,7 +184,7 @@ module.exports = {
            * 可使用的变量：
            * id：表示提交id，完整的ID一般为40位
            */
-          url: 'https://github.com/kwooshung/files/commit/{{id}}'
+          url: 'https://github.com/kwooshung/Lomind/commit/{{id}}'
         }
       }
     }
