@@ -1,3 +1,7 @@
+## 🎉 0.0.1-beta.4 `2024-02-18`
+### 🐛 Fix
+- Update the error link in the log ([#ca34b16](https://github.com/kwooshung/Lomind/commit/ca34b16ef267835ed7f60ca6f94f2cb9c1ed680c))
+
 ## 🎉 0.0.1-beta.3 `2024-02-18`
 ### 📦 Release
 - the new version 0.0.1-beta.3 ([#3621499](https://github.com/kwooshung/Lomind/commit/3621499b9c9fc016a78b47233de3c2be2b88803a))
