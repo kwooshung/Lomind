@@ -37,15 +37,15 @@ class Theme {
    * @zh 是否已经监听媒体查询
    * @en Whether the media query is already being listened
    */
-  private isListenerAttached: boolean;
+  public isListenerAttached: boolean;
 
   /**
    * @zh 构造函数
    * @en Constructor
    * @param {string} [initialTheme='auto'] 初始主题
-   * @param {string[]} [initialThemes=['light', 'dark', 'auto']] 初始主题列表
+   * @param {string[]} [initialThemes=['light', 'dark']] 初始主题列表
    */
-  private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark', 'auto']) {
+  private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark']) {
     this.valid = initialThemes;
     this.current = initialTheme;
     this.mediaQueryList = window.matchMedia(Theme.DARK_THEME_QUERY);

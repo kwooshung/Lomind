@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@kwooshung/cvlar": "^1.3.7",
-    "@swc/core": "^1.4.1",
+    "@swc/core": "^1.4.2",
     "@testing-library/jest-dom": "^6.4.2",
     "@types/node": "^20.11.19",
     "@types/randomatic": "^3.1.5",

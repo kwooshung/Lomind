@@ -103,7 +103,7 @@ describe('Theme 类测试', () => {
   it('能添加新的可用主题', () => {
     theme = Theme.getInstance();
     theme.add('new-theme');
-    expect(theme.getAvailable()).toContain('new-theme');
+    expect(theme.getAvailable()).toEqual(['light', 'dark', 'new-theme']);
   });
 
   it('能获取当前主题', () => {
