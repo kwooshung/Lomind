@@ -1,3 +1,8 @@
+## 🎉 0.0.1-beta.5 `2024-02-19`
+### ✨ Feature
+- Тема была экспортирована, и код был оптимизирован ([#c4f0754](https://github.com/kwooshung/Lomind/commit/c4f0754c82ddfcd7cbba9a954bd7808232f2b6c6))
+- Добавлено управление темами ([#874ee7f](https://github.com/kwooshung/Lomind/commit/874ee7f6af551364bdba483f37a71c3b9e10eced))
+
 ## 🎉 0.0.1-beta.4 `2024-02-18`
 ### 🐛 Fix
 - Обновить ссылку ошибки в журнале ([#ca34b16](https://github.com/kwooshung/Lomind/commit/ca34b16ef267835ed7f60ca6f94f2cb9c1ed680c))

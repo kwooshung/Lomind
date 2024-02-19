@@ -1,3 +1,8 @@
+## 🎉 0.0.1-beta.5 `2024-02-19`
+### ✨ Feature
+- 该主题已导出，并且该代码已优化 ([#c4f0754](https://github.com/kwooshung/Lomind/commit/c4f0754c82ddfcd7cbba9a954bd7808232f2b6c6))
+- 添加了主题管理 ([#874ee7f](https://github.com/kwooshung/Lomind/commit/874ee7f6af551364bdba483f37a71c3b9e10eced))
+
 ## 🎉 0.0.1-beta.4 `2024-02-18`
 ### 🐛 Fix
 - 更新日志中的错误链接 ([#ca34b16](https://github.com/kwooshung/Lomind/commit/ca34b16ef267835ed7f60ca6f94f2cb9c1ed680c))
