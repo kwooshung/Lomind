@@ -1,3 +1,7 @@
+## 🎉 0.0.1-beta.6 `2024-02-19`
+### 💩 Optimization
+- テーマ配列から「自動」を削除します ([#9e006fa](https://github.com/kwooshung/Lomind/commit/9e006fad6fe812d67fba5ffac41b76e832c10220))
+
 ## 🎉 0.0.1-beta.5 `2024-02-19`
 ### ✨ Feature
 - テーマはエクスポートされ、コードが最適化されました ([#c4f0754](https://github.com/kwooshung/Lomind/commit/c4f0754c82ddfcd7cbba9a954bd7808232f2b6c6))
