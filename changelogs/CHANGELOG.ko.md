@@ -1,3 +1,8 @@
+## 🎉 0.0.1-beta.5 `2024-02-19`
+### ✨ Feature
+- 테마가 내보내고 코드가 최적화되었습니다. ([#c4f0754](https://github.com/kwooshung/Lomind/commit/c4f0754c82ddfcd7cbba9a954bd7808232f2b6c6))
+- 테마 관리가 추가되었습니다 ([#874ee7f](https://github.com/kwooshung/Lomind/commit/874ee7f6af551364bdba483f37a71c3b9e10eced))
+
 ## 🎉 0.0.1-beta.4 `2024-02-18`
 ### 🐛 Fix
 - 로그에서 오류 링크를 업데이트하십시오 ([#ca34b16](https://github.com/kwooshung/Lomind/commit/ca34b16ef267835ed7f60ca6f94f2cb9c1ed680c))
