@@ -121,10 +121,10 @@ class Themes {
    * @param {string} [initialThemes='auto'] 初始主题
    * @returns {string} 主题
    */
-  private getLocalStorageTheme = (initialThemes: string = 'auto'): string => {
+  private getLocalStorageTheme(initialThemes: string = 'auto'): string {
     const theme = localStorage.getItem(this.saveKey);
     return this.valid.includes(theme) ? theme : initialThemes;
-  };
+  }
 
   /**
    * @zh 获取单例实例
