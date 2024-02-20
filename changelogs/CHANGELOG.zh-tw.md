@@ -1,3 +1,7 @@
+## 🎉 0.0.3 `2024-02-21`
+### 🐛 Fix
+- 模因的測試文件的描述不准確 ([#85ec35e](https://github.com/kwooshung/Lomind/commit/85ec35ea102a76ad214c02761eb5c1012cbdc9d8))
+
 ## 🎉 0.0.1 `2024-02-21`
 ### 🐛 Fix
 - 將主題更改為主題 ([#5968bd6](https://github.com/kwooshung/Lomind/commit/5968bd6db8c69001b1e0b5dde177daedfa30a1ff))
