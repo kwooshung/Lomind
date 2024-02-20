@@ -29,16 +29,16 @@ const mockMatchMedia = (initialMatches) => {
         changeHandler = null;
       }
     }),
-    callChange: (newMatches) => {
+    callChange: (newMatches: any) => {
       matches = newMatches;
       if (changeHandler) changeHandler({ matches: newMatches });
     }
   });
 };
 
-describe('Theme 类测试', () => {
-  let theme;
-  let mediaQueryMock;
+describe('Themes 类测试', () => {
+  let theme: Themes;
+  let mediaQueryMock: any;
 
   beforeEach(() => {
     vi.clearAllMocks();
