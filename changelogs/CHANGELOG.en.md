@@ -1,3 +1,7 @@
+## 🎉 0.0.5 `2024-02-21`
+### 🐛 Fix
+- Code logic order is counterproductive, resulting ([#7e64118](https://github.com/kwooshung/Lomind/commit/7e64118ea34c546d041d59d92f481dd1b86eb85a))
+
 ## 🎉 0.0.4 `2024-02-21`
 ### 🐛 Fix
 - After repairing the default value, it is always the default value. Avoid the theme of not remembering the setting ([#d1c0302](https://github.com/kwooshung/Lomind/commit/d1c0302a68d299672f6f51b1303050203f456511))
