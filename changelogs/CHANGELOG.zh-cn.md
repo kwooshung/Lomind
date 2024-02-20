@@ -1,3 +1,8 @@
+## 🎉 0.0.4 `2024-02-21`
+### 🐛 Fix
+- 修复默认值后，它始终是默认值。避免不记得设置的主题 ([#d1c0302](https://github.com/kwooshung/Lomind/commit/d1c0302a68d299672f6f51b1303050203f456511))
+- 更新依赖 ([#8bf6cc3](https://github.com/kwooshung/Lomind/commit/8bf6cc3e226601eb05562d5a1e4f072c01a94aea))
+
 ## 🎉 0.0.3 `2024-02-21`
 ### 🐛 Fix
 - 模因的测试文件的描述不准确 ([#85ec35e](https://github.com/kwooshung/Lomind/commit/85ec35ea102a76ad214c02761eb5c1012cbdc9d8))

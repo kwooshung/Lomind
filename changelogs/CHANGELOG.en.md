@@ -1,3 +1,8 @@
+## 🎉 0.0.4 `2024-02-21`
+### 🐛 Fix
+- After repairing the default value, it is always the default value. Avoid the theme of not remembering the setting ([#d1c0302](https://github.com/kwooshung/Lomind/commit/d1c0302a68d299672f6f51b1303050203f456511))
+- Update dependence ([#8bf6cc3](https://github.com/kwooshung/Lomind/commit/8bf6cc3e226601eb05562d5a1e4f072c01a94aea))
+
 ## 🎉 0.0.3 `2024-02-21`
 ### 🐛 Fix
 - The description of the test file of the MEMES is inaccurate ([#85ec35e](https://github.com/kwooshung/Lomind/commit/85ec35ea102a76ad214c02761eb5c1012cbdc9d8))
