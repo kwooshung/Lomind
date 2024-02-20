@@ -1,3 +1,7 @@
+## 🎉 0.0.1 `2024-02-21`
+### 🐛 Fix
+- 將主題更改為主題 ([#5968bd6](https://github.com/kwooshung/Lomind/commit/5968bd6db8c69001b1e0b5dde177daedfa30a1ff))
+
 ## 🎉 0.0.1-beta.6 `2024-02-19`
 ### 💩 Optimization
 - 從主題陣列中刪除“自動” ([#9e006fa](https://github.com/kwooshung/Lomind/commit/9e006fad6fe812d67fba5ffac41b76e832c10220))
