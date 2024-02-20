@@ -1,3 +1,7 @@
+## 🎉 0.0.3 `2024-02-21`
+### 🐛 Fix
+- ミームのテストファイルの説明は不正確です ([#85ec35e](https://github.com/kwooshung/Lomind/commit/85ec35ea102a76ad214c02761eb5c1012cbdc9d8))
+
 ## 🎉 0.0.1 `2024-02-21`
 ### 🐛 Fix
 - テーマをテーマに変更します ([#5968bd6](https://github.com/kwooshung/Lomind/commit/5968bd6db8c69001b1e0b5dde177daedfa30a1ff))

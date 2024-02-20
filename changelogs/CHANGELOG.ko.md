@@ -1,3 +1,7 @@
+## 🎉 0.0.3 `2024-02-21`
+### 🐛 Fix
+- 밈의 테스트 파일에 대한 설명은 부정확합니다. ([#85ec35e](https://github.com/kwooshung/Lomind/commit/85ec35ea102a76ad214c02761eb5c1012cbdc9d8))
+
 ## 🎉 0.0.1 `2024-02-21`
 ### 🐛 Fix
 - 테마를 테마로 변경하십시오 ([#5968bd6](https://github.com/kwooshung/Lomind/commit/5968bd6db8c69001b1e0b5dde177daedfa30a1ff))
