@@ -2,7 +2,7 @@
  * @zh 主题管理器
  * @en Theme Manager
  */
-class Theme {
+class Themes {
   /**
    * @zh 暗黑模式媒体查询
    * @en Dark mode media query
@@ -13,7 +13,7 @@ class Theme {
    * @zh 单例实例
    * @en Singleton instance
    */
-  private static instance: Theme | null = null;
+  private static instance: Themes | null = null;
 
   /**
    * @zh 可用主题
@@ -48,7 +48,7 @@ class Theme {
   private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark']) {
     this.valid = initialThemes;
     this.current = initialTheme;
-    this.mediaQueryList = window.matchMedia(Theme.DARK_THEME_QUERY);
+    this.mediaQueryList = window.matchMedia(Themes.DARK_THEME_QUERY);
     this.isListenerAttached = false;
     this.init();
   }
@@ -114,13 +114,13 @@ class Theme {
    * @en Get singleton instance
    * @param {string} [initialTheme] 初始主题
    * @param {string[]} [initialThemes] 初始主题列表
-   * @returns {Theme} 主题管理器实例
+   * @returns {Themes} 主题管理器实例
    */
-  public static getInstance(initialTheme?: string, initialThemes?: string[]): Theme {
-    if (!Theme.instance) {
-      Theme.instance = new Theme(initialTheme, initialThemes);
+  public static getInstance(initialTheme?: string, initialThemes?: string[]): Themes {
+    if (!Themes.instance) {
+      Themes.instance = new Themes(initialTheme, initialThemes);
     }
-    return Theme.instance;
+    return Themes.instance;
   }
 
   /**
@@ -183,4 +183,4 @@ class Theme {
   }
 }
 
-export default Theme;
+export default Themes;
