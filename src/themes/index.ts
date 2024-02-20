@@ -16,6 +16,12 @@ class Themes {
   private static instance: Themes | null = null;
 
   /**
+   * @zh 本地存储 key
+   * @en Local storage key
+   */
+  private saveKey: string = 'ks-theme';
+
+  /**
    * @zh 可用主题
    * @en Available themes
    */
@@ -47,7 +53,7 @@ class Themes {
    */
   private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark']) {
     this.valid = initialThemes;
-    this.current = initialTheme;
+    this.current = this.getLocalStorageTheme(initialTheme);
     this.mediaQueryList = window.matchMedia(Themes.DARK_THEME_QUERY);
     this.isListenerAttached = false;
     this.init();
@@ -110,6 +116,17 @@ class Themes {
   }
 
   /**
+   * @zh 从本地存储获取主题
+   * @en Get theme from local storage
+   * @param {string} [initialThemes='auto'] 初始主题
+   * @returns {string} 主题
+   */
+  private getLocalStorageTheme = (initialThemes: string = 'auto'): string => {
+    const theme = localStorage.getItem(this.saveKey);
+    return this.valid.includes(theme) ? theme : initialThemes;
+  };
+
+  /**
    * @zh 获取单例实例
    * @en Get singleton instance
    * @param {string} [initialTheme] 初始主题
@@ -131,7 +148,7 @@ class Themes {
    */
   public set(theme: string): void {
     this.current = theme;
-    localStorage.setItem('theme', theme);
+    localStorage.setItem(this.saveKey, theme);
 
     if (theme === 'auto') {
       this.attachListener();

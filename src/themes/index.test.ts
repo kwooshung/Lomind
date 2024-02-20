@@ -10,8 +10,22 @@ global.localStorage = {
   setItem: vi.fn()
 };
 
+// 模拟 localStorage
+const mockLocalStorage = () => {
+  let store = {};
+  return {
+    getItem: vi.fn((key) => store[key] || null),
+    setItem: vi.fn((key, value) => {
+      store[key] = value.toString();
+    }),
+    clear: () => {
+      store = {};
+    }
+  };
+};
+
 // 模拟媒体查询
-const mockMatchMedia = (initialMatches) => {
+const mockMatchMedia = (initialMatches: boolean) => {
   let matches = initialMatches;
   let changeHandler = null;
 
@@ -37,14 +51,34 @@ const mockMatchMedia = (initialMatches) => {
 };
 
 describe('Themes 类测试', () => {
-  let theme: Themes;
+  let themeManager: Themes;
   let mediaQueryMock: any;
 
   beforeEach(() => {
     vi.clearAllMocks();
     Themes['instance'] = null;
+    global.localStorage = mockLocalStorage();
     mediaQueryMock = mockMatchMedia(false);
     window.matchMedia = mediaQueryMock;
+  });
+
+  it('正确初始化并从本地存储获取主题', () => {
+    localStorage.setItem('ks-theme', 'dark');
+    themeManager = Themes.getInstance();
+    expect(themeManager.getCurrent()).toBe('dark');
+  });
+
+  it('如果本地存储中没有有效主题，则使用默认主题', () => {
+    localStorage.setItem('ks-theme', 'non-existent-theme');
+    themeManager = Themes.getInstance();
+    expect(themeManager.getCurrent()).toBe('auto');
+  });
+
+  it('能够正确设置并应用新主题', () => {
+    themeManager = Themes.getInstance();
+    themeManager.set('dark');
+    expect(localStorage.setItem).toHaveBeenCalledWith('ks-theme', 'dark');
+    expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'dark');
   });
 
   it('单例模式能正确工作', () => {
@@ -55,37 +89,37 @@ describe('Themes 类测试', () => {
 
   it('能正确初始化并应用初始主题', () => {
     window.matchMedia = mockMatchMedia(false);
-    theme = Themes.getInstance();
+    themeManager = Themes.getInstance();
     expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'light');
   });
 
   it('能正确设置并应用新主题', () => {
-    theme = Themes.getInstance();
-    theme.set('dark');
-    expect(localStorage.setItem).toHaveBeenCalledWith('theme', 'dark');
+    themeManager = Themes.getInstance();
+    themeManager.set('dark');
+    expect(localStorage.setItem).toHaveBeenCalledWith('ks-theme', 'dark');
     expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'dark');
   });
 
   it('如果设置的主题不存在，则默认使用 light', () => {
-    theme = Themes.getInstance();
-    theme.set('non-exist-theme');
+    themeManager = Themes.getInstance();
+    themeManager.set('non-exist-theme');
     expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'light');
   });
 
   it('直接设置 auto', () => {
-    theme = Themes.getInstance('dark');
-    theme.set('auto');
+    themeManager = Themes.getInstance('dark');
+    themeManager.set('auto');
     expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'light');
   });
 
   it('一次性添加多个主题', () => {
-    theme = Themes.getInstance('auto');
-    theme.add(['a', 'b', 'c']);
+    themeManager = Themes.getInstance('auto');
+    themeManager.add(['a', 'b', 'c']);
     expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'light');
   });
 
   it('能正确处理自动主题', () => {
-    theme = Themes.getInstance('auto');
+    themeManager = Themes.getInstance('auto');
     // 确保 matches 开始为 false
     expect(mediaQueryMock().matches).toBe(false);
 
@@ -101,21 +135,21 @@ describe('Themes 类测试', () => {
   });
 
   it('能添加新的可用主题', () => {
-    theme = Themes.getInstance();
-    theme.add('new-theme');
-    expect(theme.getAvailable()).toEqual(['light', 'dark', 'new-theme']);
+    themeManager = Themes.getInstance();
+    themeManager.add('new-theme');
+    expect(themeManager.getAvailable()).toEqual(['light', 'dark', 'new-theme']);
   });
 
   it('能获取当前主题', () => {
-    theme = Themes.getInstance('dark');
-    expect(theme.getCurrent()).toBe('dark');
+    themeManager = Themes.getInstance('dark');
+    expect(themeManager.getCurrent()).toBe('dark');
   });
 
   it('卸载时能正确移除媒体查询监听器', () => {
-    theme = Themes.getInstance('auto');
+    themeManager = Themes.getInstance('auto');
     // 这里假设 attachListener 已被调用并添加了事件监听器
-    theme.uninstall();
+    themeManager.uninstall();
     // 验证 removeEventListener 是否被正确调用
-    expect(theme.isListenerAttached).toBeFalsy();
+    expect(themeManager.isListenerAttached).toBeFalsy();
   });
 });
