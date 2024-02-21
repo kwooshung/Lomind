@@ -65,13 +65,13 @@ describe('Themes 类测试', () => {
   it('正确初始化并从本地存储获取主题', () => {
     localStorage.setItem('ks-theme', 'dark');
     themeManager = Themes.getInstance();
-    expect(themeManager.getCurrent()).toBe('dark');
+    expect(themeManager.getName()).toBe('dark');
   });
 
   it('如果本地存储中没有有效主题，则使用默认主题', () => {
     localStorage.setItem('ks-theme', 'non-existent-theme');
     themeManager = Themes.getInstance();
-    expect(themeManager.getCurrent()).toBe('auto');
+    expect(themeManager.getValue()).toBe('auto');
   });
 
   it('能够正确设置并应用新主题', () => {
@@ -142,7 +142,7 @@ describe('Themes 类测试', () => {
 
   it('能获取当前主题', () => {
     themeManager = Themes.getInstance('dark');
-    expect(themeManager.getCurrent()).toBe('dark');
+    expect(themeManager.getName()).toBe('dark');
   });
 
   it('卸载时能正确移除媒体查询监听器', () => {

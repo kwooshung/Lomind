@@ -28,10 +28,16 @@ class Themes {
   private valid: string[];
 
   /**
-   * @zh 当前主题
-   * @en Current theme
+   * @zh 当前主题值
+   * @en Current theme value
    */
-  private current: string;
+  private value: string;
+
+  /**
+   * @zh 当前主题名
+   * @en Current theme name
+   */
+  private name: string;
 
   /**
    * @zh 媒体查询实例
@@ -53,7 +59,7 @@ class Themes {
    */
   private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark']) {
     this.valid = initialThemes;
-    this.current = this.getLocalStorageTheme(initialTheme);
+    this.value = this.getLocalStorageTheme(initialTheme);
     this.mediaQueryList = window.matchMedia(Themes.DARK_THEME_QUERY);
     this.isListenerAttached = false;
     this.init();
@@ -65,8 +71,8 @@ class Themes {
    * @returns {void} 无返回值
    */
   private init(): void {
-    this.set(this.current);
-    this.current === 'auto' && this.attachListener();
+    this.set(this.value);
+    this.value === 'auto' && this.attachListener();
   }
 
   /**
@@ -76,7 +82,8 @@ class Themes {
    * @returns {void} 无返回值
    */
   private apply(theme: string): void {
-    document.documentElement.setAttribute('data-theme', this.valid.includes(theme) ? theme : 'light');
+    this.name = this.valid.includes(theme) ? theme : 'light';
+    document.documentElement.setAttribute('data-theme', this.name);
   }
 
   /**
@@ -85,9 +92,8 @@ class Themes {
    * @returns {void} 无返回值
    */
   private handleSystemChange = (): void => {
-    const isDarkMode = this.mediaQueryList.matches;
-    if (this.current === 'auto') {
-      this.apply(isDarkMode ? 'dark' : 'light');
+    if (this.value === 'auto') {
+      this.apply(this.mediaQueryList.matches ? 'dark' : 'light');
     }
   };
 
@@ -147,7 +153,7 @@ class Themes {
    * @returns {void} 无返回值
    */
   public set(theme: string): void {
-    this.current = theme;
+    this.value = theme;
     localStorage.setItem(this.saveKey, theme);
 
     if (theme === 'auto') {
@@ -174,12 +180,21 @@ class Themes {
   }
 
   /**
-   * @zh 获得当前主题
-   * @en Get current theme
-   * @returns {string} 当前主题
+   * @zh 获得当前主题值
+   * @en Get current theme value
+   * @returns {string} 当前主题值
    */
-  public getCurrent(): string {
-    return this.current;
+  public getValue(): string {
+    return this.value;
+  }
+
+  /**
+   * @zh 获得当前主题名
+   * @en Get current theme name
+   * @returns {string} 当前主题名
+   */
+  public getName(): string {
+    return this.name;
   }
 
   /**
