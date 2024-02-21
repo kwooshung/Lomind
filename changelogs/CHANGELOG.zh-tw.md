@@ -1,3 +1,7 @@
+## 🎉 0.0.7 `2024-02-21`
+### ✨ Feature
+- 增加回調事件 ([#4045c2b](https://github.com/kwooshung/Lomind/commit/4045c2bf43c76d3186bbd0c8569a6b3467c1d5bc))
+
 ## 🎉 0.0.6 `2024-02-21`
 ### ✨ Feature
 - 修改getCurrente以添加getValue，添加getName ([#9ab50fe](https://github.com/kwooshung/Lomind/commit/9ab50fea879d14a49dc17578958c3648b875018a))
