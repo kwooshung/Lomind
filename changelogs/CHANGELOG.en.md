@@ -1,3 +1,7 @@
+## 🎉 0.0.8 `2024-02-21`
+### 🐛 Fix
+- Modify test, branch coverage reaches 100% ([#11c860e](https://github.com/kwooshung/Lomind/commit/11c860e3e814394fc409ec79aed1f10b39712104))
+
 ## 🎉 0.0.7 `2024-02-21`
 ### ✨ Feature
 - Increase the callback incident ([#4045c2b](https://github.com/kwooshung/Lomind/commit/4045c2bf43c76d3186bbd0c8569a6b3467c1d5bc))
