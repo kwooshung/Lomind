@@ -1,3 +1,7 @@
+## 🎉 0.0.6 `2024-02-21`
+### ✨ Feature
+- getCurrente를 수정하여 getValue를 수정하고 getName을 추가하십시오 ([#9ab50fe](https://github.com/kwooshung/Lomind/commit/9ab50fea879d14a49dc17578958c3648b875018a))
+
 ## 🎉 0.0.5 `2024-02-21`
 ### 🐛 Fix
 - 코드 로직 순서는 비생산적이며 결과적으로 생성됩니다 ([#7e64118](https://github.com/kwooshung/Lomind/commit/7e64118ea34c546d041d59d92f481dd1b86eb85a))
