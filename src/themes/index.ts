@@ -40,6 +40,12 @@ class Themes {
   private name: string;
 
   /**
+   * @zh 主题改变时触发
+   * @en Triggered when the theme changes
+   */
+  private onChange: (value: string, name: string) => void;
+
+  /**
    * @zh 媒体查询实例
    * @en Media query instance
    */
@@ -56,12 +62,15 @@ class Themes {
    * @en Constructor
    * @param {string} [initialTheme='auto'] 初始主题
    * @param {string[]} [initialThemes=['light', 'dark']] 初始主题列表
+   * @param {Function} [onChange] 主题改变时触发
    */
-  private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark']) {
+  private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark'], onChange: (value: string, name: string) => void = () => {}) {
     this.valid = initialThemes;
     this.value = this.getLocalStorageTheme(initialTheme);
+    this.name = this.value;
     this.mediaQueryList = window.matchMedia(Themes.DARK_THEME_QUERY);
     this.isListenerAttached = false;
+    this.onChange = onChange;
     this.init();
   }
 
@@ -84,6 +93,7 @@ class Themes {
   private apply(theme: string): void {
     this.name = this.valid.includes(theme) ? theme : 'light';
     document.documentElement.setAttribute('data-theme', this.name);
+    this.onChange(this.value, this.name);
   }
 
   /**
@@ -129,7 +139,7 @@ class Themes {
    */
   private getLocalStorageTheme(initialThemes: string = 'auto'): string {
     const theme = localStorage.getItem(this.saveKey);
-    return this.valid.includes(theme) ? theme : initialThemes;
+    return theme && this.valid.includes(theme) ? theme : initialThemes;
   }
 
   /**
@@ -205,6 +215,15 @@ class Themes {
   public getAvailable(): string[] {
     return this.valid;
   }
+
+  /**
+   * @zh 绑定主题改变事件
+   * @en Bind theme change event
+   * @param {Function} [onChange] 主题改变时触发
+   */
+  public bindChange = (onChange: (value: string, name: string) => void = () => {}): void => {
+    this.onChange = onChange;
+  };
 
   /**
    * @zh 卸载主题管理器，主要是移除媒体查询监听，防止内存泄漏

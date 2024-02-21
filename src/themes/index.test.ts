@@ -145,6 +145,21 @@ describe('Themes 类测试', () => {
     expect(themeManager.getName()).toBe('dark');
   });
 
+  it('bindChange 正确绑定并触发 onChange 回调', () => {
+    themeManager = Themes.getInstance();
+    const mockOnChange = vi.fn();
+
+    // 绑定模拟的 onChange 回调
+    themeManager.bindChange(mockOnChange);
+
+    // 改变主题以触发回调
+    themeManager.set('dark');
+
+    // 检查模拟回调是否被调用
+    expect(mockOnChange).toHaveBeenCalled();
+    expect(mockOnChange).toHaveBeenCalledWith('dark', 'dark');
+  });
+
   it('卸载时能正确移除媒体查询监听器', () => {
     themeManager = Themes.getInstance('auto');
     // 这里假设 attachListener 已被调用并添加了事件监听器
