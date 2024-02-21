@@ -1,3 +1,7 @@
+## 🎉 0.0.6 `2024-02-21`
+### ✨ Feature
+- GetCurrenteをGetValueに変更し、GetNameを追加します ([#9ab50fe](https://github.com/kwooshung/Lomind/commit/9ab50fea879d14a49dc17578958c3648b875018a))
+
 ## 🎉 0.0.5 `2024-02-21`
 ### 🐛 Fix
 - コードロジック順序は逆効果であり、結果として ([#7e64118](https://github.com/kwooshung/Lomind/commit/7e64118ea34c546d041d59d92f481dd1b86eb85a))

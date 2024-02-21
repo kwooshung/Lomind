@@ -1,3 +1,7 @@
+## 🎉 0.0.6 `2024-02-21`
+### ✨ Feature
+- 修改getCurrente以添加getValue，添加getName ([#9ab50fe](https://github.com/kwooshung/Lomind/commit/9ab50fea879d14a49dc17578958c3648b875018a))
+
 ## 🎉 0.0.5 `2024-02-21`
 ### 🐛 Fix
 - 代码逻辑顺序适得其反，结果 ([#7e64118](https://github.com/kwooshung/Lomind/commit/7e64118ea34c546d041d59d92f481dd1b86eb85a))
