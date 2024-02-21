@@ -1,3 +1,7 @@
+## 🎉 0.0.8 `2024-02-21`
+### 🐛 Fix
+- 테스트 수정, 지점 커버리지는 100%에 이릅니다. ([#11c860e](https://github.com/kwooshung/Lomind/commit/11c860e3e814394fc409ec79aed1f10b39712104))
+
 ## 🎉 0.0.7 `2024-02-21`
 ### ✨ Feature
 - 콜백 사건을 늘리십시오 ([#4045c2b](https://github.com/kwooshung/Lomind/commit/4045c2bf43c76d3186bbd0c8569a6b3467c1d5bc))

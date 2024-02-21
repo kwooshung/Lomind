@@ -221,7 +221,7 @@ class Themes {
    * @en Bind theme change event
    * @param {Function} [onChange] 主题改变时触发
    */
-  public bindChange = (onChange: (value: string, name: string) => void = () => {}): void => {
+  public bindChange = (onChange: (value: string, name: string) => void): void => {
     this.onChange = onChange;
   };
 
