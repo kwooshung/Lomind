@@ -1,3 +1,7 @@
+## 🎉 0.0.9 `2024-06-15`
+### ✨ Feature
+- Increase DETECTOR and detect client device information to the greatest extent ([#0aeac22](https://github.com/kwooshung/Lomind/commit/0aeac229b58bbfee58bf25c02f514c9521114529))
+
 ## 🎉 0.0.8 `2024-02-21`
 ### 🐛 Fix
 - Modify test, branch coverage reaches 100% ([#11c860e](https://github.com/kwooshung/Lomind/commit/11c860e3e814394fc409ec79aed1f10b39712104))
