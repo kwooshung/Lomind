@@ -1,3 +1,7 @@
+## 🎉 0.0.9 `2024-06-15`
+### ✨ Feature
+- 最大程度地增加检测器并检测客户设备信息 ([#0aeac22](https://github.com/kwooshung/Lomind/commit/0aeac229b58bbfee58bf25c02f514c9521114529))
+
 ## 🎉 0.0.8 `2024-02-21`
 ### 🐛 Fix
 - 修改测试，分支覆盖率达到100％ ([#11c860e](https://github.com/kwooshung/Lomind/commit/11c860e3e814394fc409ec79aed1f10b39712104))
