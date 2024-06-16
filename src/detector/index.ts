@@ -67,7 +67,7 @@ class detector {
       navigator['userAgentData'].getHighEntropyValues(['platformVersion']).then((ua: any) => {
         if (navigator['userAgentData'].platform === 'Windows') {
           const majorPlatformVersion = parseInt(ua.platformVersion.split('.')[0]);
-          if (majorPlatformVersion >= 10) {
+          if (majorPlatformVersion >= 13) {
             name = 'Windows 11';
             version = ua.platformVersion;
           }
@@ -86,14 +86,6 @@ class detector {
         platform: cpu.architecture || ''
       };
     }
-  };
-
-  /**
-   * @zh 获取操作系统信息
-   * @en Get OS information
-   */
-  private getOSInfo = (): IOSInfo => {
-    return this.osInfo;
   };
 
   /**

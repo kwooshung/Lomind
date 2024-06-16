@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import Detector from '.';
 
 describe('Detector', () => {
@@ -153,19 +153,26 @@ describe('Detector', () => {
     });
     detector = new Detector();
     expect(detector.isTablet()).toBeTruthy();
-    Object.defineProperty(navigator, 'userAgent', { value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36', writable: true });
+    Object.defineProperty(navigator, 'userAgent', {
+      value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+      writable: true
+    });
     detector = new Detector();
     expect(detector.isTablet()).toBeFalsy();
     Object.defineProperty(navigator, 'userAgent', { value: originalUserAgent });
   });
 
-  it('应该处理未知的操作系统名称和版本', () => {
-    const originalGetOS = detector.parser.getOS;
+  it('应该处理未知的操作系统名称和版本', async () => {
+    // 模拟 getOS 方法返回 undefined 的名称和版本
     detector.parser.getOS = () => ({ name: undefined, version: undefined });
-    const osInfo = (detector as any).getOSInfo();
+    detector.initializeOSInfo();
+
+    // 等待异步操作完成
+    await new Promise(setImmediate);
+
+    const osInfo = detector.osInfo;
     expect(osInfo.name).toBe('');
     expect(osInfo.version).toBe('');
-    detector.parser.getOS = originalGetOS;
   });
 
   it('应处理解析器返回空对象的情况', () => {
