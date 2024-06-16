@@ -199,8 +199,8 @@ class Themes {
   }
 
   /**
-   * @zh 获得当前主题名
-   * @en Get current theme name
+   * @zh 获得当前主题名, value=auto 为跟随系统主题，因此需要根据系统主题值返回 light 或 dark
+   * @en Get current theme name, value=auto is the system theme, so you need to return light or dark based on the system theme value
    * @returns {string} 当前主题名
    */
   public getName(): string {

@@ -14,5 +14,5 @@
   },
   "include": ["./src", "./typings.d.ts"],
   "exclude": ["node_modules", ".vscode", ".github", "dist"],
-  "typeRoots": ["node_modules/@types", "./typings.d.ts"]
+  "typeRoots": ["node_modules/@types"]
 }

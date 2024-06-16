@@ -2,7 +2,7 @@
  * @zh 浏览器信息
  * @en Browser info
  */
-interface BrowserInfo {
+export interface IBrowserInfo {
   /**
    * @zh 浏览器名称
    * @en Browser name
@@ -24,7 +24,7 @@ interface BrowserInfo {
  * @zh 操作系统信息
  * @en OS info
  */
-interface OSInfo {
+export interface IOSInfo {
   /**
    * @zh 操作系统名称
    * @en OS name
@@ -35,6 +35,15 @@ interface OSInfo {
    * @en OS version
    */
   osVersion: string;
+  /**
+   * @zh CPU 信息
+   * @en CPU info
+   */
+  platform: string;
 }
 
-export { BrowserInfo, OSInfo };
+/**
+ * @zh 比较运算符
+ * @en Comparison operator
+ */
+export type TOperator = '<' | '>' | '=' | '<=' | '>=';

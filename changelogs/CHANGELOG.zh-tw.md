@@ -1,3 +1,8 @@
+## 🎉 0.0.13 `2024-06-17`
+### ✨ Feature
+- 已經添加了Windows11的判斷，並添加了系統版本的判斷 ([#67f6598](https://github.com/kwooshung/Lomind/commit/67f6598301b18799dd6da8ea827d9894026d8c7f))
+- 完美的探針 ([#2ffc354](https://github.com/kwooshung/Lomind/commit/2ffc3548f7ec3ba82b475fc0aa18f71ac40cf4a5))
+
 ## 🎉 0.0.12 `2024-06-16`
 ### 🐛 Fix
 - 維修接口的問題未導出 ([#54cf3fc](https://github.com/kwooshung/Lomind/commit/54cf3fc04324d8d99305948f4190ca75bb394057))
