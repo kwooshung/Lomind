@@ -1,3 +1,7 @@
+## 🎉 0.0.22 `2024-06-17`
+### ✨ Feature
+- The main logic of increasing anti -shake and throwing functions is from Lodash ([#938c599](https://github.com/kwooshung/Lomind/commit/938c599d56ae56c8075a796fc0aba8889686446b))
+
 ## 🎉 0.0.21 `2024-06-17`
 ### 🐛 Fix
 - Standardized function name ([#3be2c6d](https://github.com/kwooshung/Lomind/commit/3be2c6db3dbc7567e5799e610e266d29b115f7ae))
