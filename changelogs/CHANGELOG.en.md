@@ -1,3 +1,7 @@
+## 🎉 0.0.12 `2024-06-16`
+### 🐛 Fix
+- The problem of repairing the interface is not exported ([#54cf3fc](https://github.com/kwooshung/Lomind/commit/54cf3fc04324d8d99305948f4190ca75bb394057))
+
 ## 🎉 0.0.11 `2024-06-16`
 ### 🐛 Fix
 - Repair import problem ([#81da9b8](https://github.com/kwooshung/Lomind/commit/81da9b88b0cfa7b9b37bb8dc4bff35e6433472a9))
