@@ -57,8 +57,8 @@ describe('Detector', () => {
       writable: true
     });
     detector = new Detector();
-    expect(detector.isBrowser('Chrome')).toBeTruthy();
-    expect(detector.isBrowser('Firefox')).toBeFalsy();
+    expect(detector.isBrowserName('Chrome')).toBeTruthy();
+    expect(detector.isBrowserName('Firefox')).toBeFalsy();
     Object.defineProperty(navigator, 'userAgent', { value: originalUserAgent });
   });
 
@@ -98,8 +98,8 @@ describe('Detector', () => {
       writable: true
     });
     detector = new Detector();
-    expect(detector.isOS('windows')).toBeTruthy();
-    expect(detector.isOS('MacOs')).toBeFalsy();
+    expect(detector.isOSName('windows')).toBeTruthy();
+    expect(detector.isOSName('MacOs')).toBeFalsy();
     Object.defineProperty(navigator, 'userAgent', { value: originalUserAgent });
   });
 
@@ -165,7 +165,7 @@ describe('Detector', () => {
   it('应该处理未知的操作系统名称和版本', async () => {
     // 模拟 getOS 方法返回 undefined 的名称和版本
     detector.parser.getOS = () => ({ name: undefined, version: undefined });
-    detector.initializeOSInfo();
+    (detector as any).initializeOSInfo();
 
     // 等待异步操作完成
     await new Promise(setImmediate);
@@ -201,8 +201,8 @@ describe('Detector', () => {
       writable: true
     });
     detector = new Detector();
-    expect(detector.isBrowser('chrome')).toBeTruthy();
-    expect(detector.isBrowser('Chrome')).toBeTruthy();
+    expect(detector.isBrowserName('chrome')).toBeTruthy();
+    expect(detector.isBrowserName('Chrome')).toBeTruthy();
     Object.defineProperty(navigator, 'userAgent', { value: originalUserAgent });
   });
 

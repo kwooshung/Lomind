@@ -134,7 +134,7 @@ class detector {
    * @param {string} name 浏览器名称
    * @returns 是否为指定浏览器
    */
-  isBrowser = (name: string): boolean => this.browserInfo.name.toLowerCase() === name.toLowerCase();
+  isBrowserName = (name: string): boolean => this.browserInfo.name.toLowerCase() === name.toLowerCase();
 
   /**
    * @zh 判断是否为指定浏览器版本
@@ -153,7 +153,7 @@ class detector {
    * @param {string} name 操作系统名称
    * @returns 是否为指定操作系统
    */
-  isOS = (name: string): boolean => this.osInfo.name.toLowerCase() === name.toLowerCase();
+  isOSName = (name: string): boolean => this.osInfo.name.toLowerCase() === name.toLowerCase();
 
   /**
    * @zh 判断是否为指定操作系统版本
