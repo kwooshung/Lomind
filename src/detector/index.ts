@@ -45,9 +45,9 @@ class detector {
   private getBrowserInfo = (): IBrowserInfo => {
     const browser = this.parser.getBrowser();
     return {
-      name: browser.name || 'Unknown',
-      fullVersion: browser.version || 'Unknown',
-      majorVersion: browser.major || 'Unknown'
+      name: browser.name || '',
+      fullVersion: browser.version || '',
+      majorVersion: browser.major || ''
     };
   };
 
@@ -163,7 +163,7 @@ class detector {
    * @param {'<' | '>' | '=' | '<=' | '>='} operator 比较操作符
    * @return 是否满足条件
    */
-  compareversion(version: string, operator: '<' | '>' | '=' | '<=' | '>='): boolean {
+  compareOSVersion(version: string, operator: '<' | '>' | '=' | '<=' | '>='): boolean {
     return this.compare(version, operator, this.osInfo.version);
   }
 
