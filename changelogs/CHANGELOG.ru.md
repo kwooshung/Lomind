@@ -1,3 +1,7 @@
+## 🎉 0.0.21 `2024-06-17`
+### 🐛 Fix
+- Стандартизированное имя функции ([#3be2c6d](https://github.com/kwooshung/Lomind/commit/3be2c6db3dbc7567e5799e610e266d29b115f7ae))
+
 ## 🎉 0.0.20 `2024-06-17`
 ### 🐛 Fix
 - Изменить тест ([#5c0ec58](https://github.com/kwooshung/Lomind/commit/5c0ec58bfeb30df7e0904c5c64093a0f7c5a3891))
