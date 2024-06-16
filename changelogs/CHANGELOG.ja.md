@@ -1,3 +1,8 @@
+## 🎉 0.0.13 `2024-06-17`
+### ✨ Feature
+- Windows11の判断が追加され、システムバージョンの判断が追加されました ([#67f6598](https://github.com/kwooshung/Lomind/commit/67f6598301b18799dd6da8ea827d9894026d8c7f))
+- 完璧なプローブ ([#2ffc354](https://github.com/kwooshung/Lomind/commit/2ffc3548f7ec3ba82b475fc0aa18f71ac40cf4a5))
+
 ## 🎉 0.0.12 `2024-06-16`
 ### 🐛 Fix
 - インターフェイスを修復する問題はエクスポートされません ([#54cf3fc](https://github.com/kwooshung/Lomind/commit/54cf3fc04324d8d99305948f4190ca75bb394057))
