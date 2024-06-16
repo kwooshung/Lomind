@@ -1,3 +1,7 @@
+## 🎉 0.0.11 `2024-06-16`
+### 🐛 Fix
+- 輸入問題を修復します ([#81da9b8](https://github.com/kwooshung/Lomind/commit/81da9b88b0cfa7b9b37bb8dc4bff35e6433472a9))
+
 ## 🎉 0.0.10 `2024-06-16`
 ### ✨ Feature
 - 検出機能を改善します ([#8d8939d](https://github.com/kwooshung/Lomind/commit/8d8939dad2741a999bf92407bcf1bc231187998b))

@@ -1,3 +1,7 @@
+## 🎉 0.0.11 `2024-06-16`
+### 🐛 Fix
+- 修復導入問題 ([#81da9b8](https://github.com/kwooshung/Lomind/commit/81da9b88b0cfa7b9b37bb8dc4bff35e6433472a9))
+
 ## 🎉 0.0.10 `2024-06-16`
 ### ✨ Feature
 - 改善檢測器功能 ([#8d8939d](https://github.com/kwooshung/Lomind/commit/8d8939dad2741a999bf92407bcf1bc231187998b))
