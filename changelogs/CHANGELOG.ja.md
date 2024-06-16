@@ -1,3 +1,7 @@
+## 🎉 0.0.22 `2024-06-17`
+### ✨ Feature
+- アンチシェイクとスロー機能の増加の主な論理は、Lodashからのものです ([#938c599](https://github.com/kwooshung/Lomind/commit/938c599d56ae56c8075a796fc0aba8889686446b))
+
 ## 🎉 0.0.21 `2024-06-17`
 ### 🐛 Fix
 - 標準化された関数名 ([#3be2c6d](https://github.com/kwooshung/Lomind/commit/3be2c6db3dbc7567e5799e610e266d29b115f7ae))
