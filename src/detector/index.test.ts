@@ -19,6 +19,7 @@ describe('Detector', () => {
     const osInfo = detector.osInfo;
     expect(osInfo).toHaveProperty('osName');
     expect(osInfo).toHaveProperty('osVersion');
+    expect(osInfo).toHaveProperty('platform');
   });
 
   it('应该正确获取 Windows 11 的操作系统信息', async () => {

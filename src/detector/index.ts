@@ -59,30 +59,30 @@ class detector {
     const os = this.parser.getOS();
     const cpu = this.parser.getCPU();
 
-    let osName = os.name || 'Unknown';
-    let osVersion = os.version || 'Unknown';
+    let name = os.name || '';
+    let version = os.version || '';
 
     if (navigator['userAgentData'] && navigator['userAgentData'].getHighEntropyValues) {
       navigator['userAgentData'].getHighEntropyValues(['platformVersion']).then((ua: any) => {
         if (navigator['userAgentData'].platform === 'Windows') {
           const majorPlatformVersion = parseInt(ua.platformVersion.split('.')[0]);
           if (majorPlatformVersion >= 13) {
-            osName = 'Windows 11';
-            osVersion = ua.platformVersion;
+            name = 'Windows 11';
+            version = ua.platformVersion;
           }
         }
 
         this.osInfo = {
-          osName,
-          osVersion,
-          platform: cpu.architecture || 'Unknown'
+          name,
+          version,
+          platform: cpu.architecture || ''
         };
       });
     } else {
       this.osInfo = {
-        osName,
-        osVersion,
-        platform: cpu.architecture || 'Unknown'
+        name,
+        version,
+        platform: cpu.architecture || ''
       };
     }
 
@@ -154,7 +154,7 @@ class detector {
    * @param {string} name 操作系统名称
    * @returns 是否为指定操作系统
    */
-  isOS = (name: string): boolean => this.osInfo.osName.toLowerCase() === name.toLowerCase();
+  isOS = (name: string): boolean => this.osInfo.name.toLowerCase() === name.toLowerCase();
 
   /**
    * @zh 判断是否为指定操作系统版本
@@ -163,8 +163,8 @@ class detector {
    * @param {'<' | '>' | '=' | '<=' | '>='} operator 比较操作符
    * @return 是否满足条件
    */
-  compareOSVersion(version: string, operator: '<' | '>' | '=' | '<=' | '>='): boolean {
-    return this.compare(version, operator, this.osInfo.osVersion);
+  compareversion(version: string, operator: '<' | '>' | '=' | '<=' | '>='): boolean {
+    return this.compare(version, operator, this.osInfo.version);
   }
 
   /**
