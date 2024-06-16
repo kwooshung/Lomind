@@ -1,3 +1,7 @@
+## 🎉 0.0.16 `2024-06-17`
+### 🐛 Fix
+- Fix the application defined by the interface ([#6ca44ce](https://github.com/kwooshung/Lomind/commit/6ca44ce8c2ec084146a652fe4f89ebaf7cfde4e2))
+
 ## 🎉 0.0.15 `2024-06-17`
 ### 🐛 Fix
 - Fix the wrong old test logic ([#2c0e309](https://github.com/kwooshung/Lomind/commit/2c0e309c8c1623b2689c45b2caffa687269b4914))
