@@ -1,3 +1,7 @@
+## 🎉 0.0.14 `2024-06-17`
+### 🐛 Fix
+- 선언 파일 ([#e6f8c3f](https://github.com/kwooshung/Lomind/commit/e6f8c3f53003af7ad0f306c3896cfc05f8c71546))
+
 ## 🎉 0.0.13 `2024-06-17`
 ### ✨ Feature
 - Windows11의 판단이 추가되었으며 시스템 버전 판단이 추가되었습니다. ([#67f6598](https://github.com/kwooshung/Lomind/commit/67f6598301b18799dd6da8ea827d9894026d8c7f))

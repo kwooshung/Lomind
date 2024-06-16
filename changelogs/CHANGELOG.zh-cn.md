@@ -1,3 +1,7 @@
+## 🎉 0.0.14 `2024-06-17`
+### 🐛 Fix
+- 声明文件 ([#e6f8c3f](https://github.com/kwooshung/Lomind/commit/e6f8c3f53003af7ad0f306c3896cfc05f8c71546))
+
 ## 🎉 0.0.13 `2024-06-17`
 ### ✨ Feature
 - 已经添加了Windows11的判断，并添加了系统版本的判断 ([#67f6598](https://github.com/kwooshung/Lomind/commit/67f6598301b18799dd6da8ea827d9894026d8c7f))
