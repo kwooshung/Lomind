@@ -29,12 +29,12 @@ export interface IOSInfo {
    * @zh 操作系统名称
    * @en OS name
    */
-  osName: string;
+  name: string;
   /**
    * @zh 操作系统版本
    * @en OS version
    */
-  osVersion: string;
+  version: string;
   /**
    * @zh CPU 信息
    * @en CPU info
