@@ -1,5 +1,5 @@
 import UAParser from 'ua-parser-js';
-import { IBrowserInfo, IOSInfo } from './interface';
+import { IBrowserInfo, IOSInfo, TOperator } from './interface';
 
 /**
  * @zh 探测器
@@ -93,11 +93,11 @@ class detector {
    * @zh 比较版本号
    * @en Compare version number
    * @param {string} version 目标版本
-   * @param {'<' | '>' | '=' | '<=' | '>='} operator 比较操作符
+   * @param {TOperator} operator 比较操作符
    * @param {string} currentVersion 当前版本
    * @return 是否满足条件
    */
-  private compare = (version: string, operator: '<' | '>' | '=' | '<=' | '>=', currentVersion: string): boolean => {
+  private compare = (version: string, operator: TOperator, currentVersion: string): boolean => {
     // 检查传入的操作符是否为有效的比较符号
     if (!['<', '>', '=', '<=', '>='].includes(operator)) {
       return false; // 如果操作符无效，返回false
@@ -141,10 +141,10 @@ class detector {
    * @zh 判断是否为指定浏览器版本
    * @en Determine if it is a specified OS
    * @param {string} version 目标版本
-   * @param {'<' | '>' | '=' | '<=' | '>='} operator 比较操作符
+   * @param {TOperator} operator 比较操作符
    * @return 是否满足条件
    */
-  compareBrowserVersion(version: string, operator: '<' | '>' | '=' | '<=' | '>='): boolean {
+  compareBrowserVersion(version: string, operator: TOperator): boolean {
     return this.compare(version, operator, this.browserInfo.fullVersion);
   }
 
@@ -160,10 +160,10 @@ class detector {
    * @zh 判断是否为指定操作系统版本
    * @en Determine if it is a specified OS version
    * @param {string} version 目标版本
-   * @param {'<' | '>' | '=' | '<=' | '>='} operator 比较操作符
+   * @param {TOperator} operator 比较操作符
    * @return 是否满足条件
    */
-  compareOSVersion(version: string, operator: '<' | '>' | '=' | '<=' | '>='): boolean {
+  compareOSVersion(version: string, operator: TOperator): boolean {
     return this.compare(version, operator, this.osInfo.version);
   }
 
