@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import Detector from './index';
+import Detector from '.';
 
 describe('Detector', () => {
   let detector: Detector;
@@ -10,8 +10,6 @@ describe('Detector', () => {
 
   it('应该正确获取浏览器信息', () => {
     const browserInfo = detector.browserInfo;
-    console.log('-----------------------');
-    console.log(browserInfo.name);
     expect(browserInfo).toHaveProperty('name');
     expect(browserInfo).toHaveProperty('fullVersion');
     expect(browserInfo).toHaveProperty('majorVersion');

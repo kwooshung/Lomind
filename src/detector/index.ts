@@ -1,5 +1,5 @@
 import UAParser from 'ua-parser-js';
-import { BrowserInfo, OSInfo } from './interface';
+import { IBrowserInfo, IOSInfo } from './interface';
 
 /**
  * @zh 探测器
@@ -20,12 +20,12 @@ class detector {
    * @zh 浏览器信息
    * @en Browser information
    */
-  browserInfo: BrowserInfo;
+  browserInfo: IBrowserInfo;
   /**
    * @zh 操作系统信息
    * @en OS information
    */
-  osInfo: OSInfo;
+  osInfo: IOSInfo;
 
   /**
    * @zh 构造函数
@@ -64,29 +64,21 @@ class detector {
   };
 
   /**
-   * @zh 判断是否为指定浏览器
-   * @en Determine if it is a specified browser
-   * @param name 浏览器名称
-   * @param name Browser name
-   * @returns 是否为指定浏览器
-   */
-  isBrowser = (name: string): boolean => this.browserInfo.name.toLowerCase() === name.toLowerCase();
-
-  /**
-   * @zh 判断是否为指定操作系统
-   * @en Determine if it is a specified OS
-   * @param version 目标版本
-   * @param operator 比较操作符：'<', '>', '=', '<=', '>='
+   * @zh 比较版本号
+   * @en Compare version number
+   * @param {string} version 目标版本
+   * @param {'<' | '>' | '=' | '<=' | '>='} operator 比较操作符
+   * @param {string} currentVersion 当前版本
    * @return 是否满足条件
    */
-  compareBrowserVersion(version: string, operator: '<' | '>' | '=' | '<=' | '>='): boolean {
+  private compare = (version: string, operator: '<' | '>' | '=' | '<=' | '>=', currentVersion: string): boolean => {
     // 检查传入的操作符是否为有效的比较符号
     if (!['<', '>', '=', '<=', '>='].includes(operator)) {
       return false; // 如果操作符无效，返回false
     }
 
     // 将当前浏览器的完整版本号按点分割转换成数字数组
-    const currentVersionParts = this.browserInfo.fullVersion.split('.').map(Number);
+    const currentVersionParts = currentVersion.split('.').map(Number);
     // 将目标版本号按点分割转换成数字数组
     const targetVersionParts = version.split('.').map(Number);
 
@@ -109,6 +101,44 @@ class detector {
 
     // 如果所有比较的部分都相等，则根据操作符返回相应的结果
     return operator === '=' || operator === '<=' || operator === '>=';
+  };
+
+  /**
+   * @zh 判断是否为指定浏览器
+   * @en Determine if it is a specified browser
+   * @param {string} name 浏览器名称
+   * @returns 是否为指定浏览器
+   */
+  isBrowser = (name: string): boolean => this.browserInfo.name.toLowerCase() === name.toLowerCase();
+
+  /**
+   * @zh 判断是否为指定浏览器版本
+   * @en Determine if it is a specified OS
+   * @param {string} version 目标版本
+   * @param {'<' | '>' | '=' | '<=' | '>='} operator 比较操作符
+   * @return 是否满足条件
+   */
+  compareBrowserVersion(version: string, operator: '<' | '>' | '=' | '<=' | '>='): boolean {
+    return this.compare(version, operator, this.browserInfo.fullVersion);
+  }
+
+  /**
+   * @zh 判断是否为指定操作系统
+   * @en Determine if it is a specified OS
+   * @param {string} name 操作系统名称
+   * @returns 是否为指定操作系统
+   */
+  isOS = (name: string): boolean => this.osInfo.osName.toLowerCase() === name.toLowerCase();
+
+  /**
+   * @zh 判断是否为指定操作系统版本
+   * @en Determine if it is a specified OS version
+   * @param {string} version 目标版本
+   * @param {'<' | '>' | '=' | '<=' | '>='} operator 比较操作符
+   * @return 是否满足条件
+   */
+  compareOSVersion(version: string, operator: '<' | '>' | '=' | '<=' | '>='): boolean {
+    return this.compare(version, operator, this.osInfo.osVersion);
   }
 
   /**
@@ -122,8 +152,4 @@ class detector {
   isTablet = (): boolean => /iPad|Tablet/.test(this.ua);
 }
 
-/**
- * @zh 导出探测器实例
- * @en Export detector instance
- */
 export default detector;
