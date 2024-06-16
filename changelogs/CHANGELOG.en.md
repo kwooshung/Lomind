@@ -1,3 +1,7 @@
+## 🎉 0.0.18 `2024-06-17`
+### 🐛 Fix
+- Avoid the hard -coding problem obtained by the Windows version number ([#6b1467a](https://github.com/kwooshung/Lomind/commit/6b1467ac3baef224547a87265d10b46fb6e9f49f))
+
 ## 🎉 0.0.17 `2024-06-17`
 ### 🐛 Fix
 - Increase initialization, repair part of the error ([#0a866f8](https://github.com/kwooshung/Lomind/commit/0a866f8044ba0a05af4a07b123ce7be7af2491bb))
