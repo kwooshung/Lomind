@@ -1,6 +1,6 @@
 {
   "name": "lomind",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "title": "lomind",
   "description": "Lomind is a tool library deeply inspired by Lodash, yet it's not intended to be a direct replacement for Lodash. The reason lies in Lodash's already proven excellence in performance and reliability. Instead, Lomind aims to assimilate the best practices from numerous outstanding open-source libraries while expanding its capabilities. It introduces a greater array of modular and high-performance utilities, particularly tailored for enhanced programming experiences in JavaScript, React Hooks, and Vue Hooks.",
   "private": false,

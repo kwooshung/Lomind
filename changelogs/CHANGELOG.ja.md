@@ -1,3 +1,7 @@
+## 🎉 0.0.10 `2024-06-16`
+### ✨ Feature
+- 検出機能を改善します ([#8d8939d](https://github.com/kwooshung/Lomind/commit/8d8939dad2741a999bf92407bcf1bc231187998b))
+
 ## 🎉 0.0.9 `2024-06-15`
 ### ✨ Feature
 - 検出器を増やし、クライアントデバイス情報を最大限に検出します ([#0aeac22](https://github.com/kwooshung/Lomind/commit/0aeac229b58bbfee58bf25c02f514c9521114529))

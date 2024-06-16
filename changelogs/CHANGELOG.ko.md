@@ -1,3 +1,7 @@
+## 🎉 0.0.10 `2024-06-16`
+### ✨ Feature
+- 검출기 기능을 향상시킵니다 ([#8d8939d](https://github.com/kwooshung/Lomind/commit/8d8939dad2741a999bf92407bcf1bc231187998b))
+
 ## 🎉 0.0.9 `2024-06-15`
 ### ✨ Feature
 - 검출기를 늘리고 클라이언트 장치 정보를 최대한 많이 감지합니다. ([#0aeac22](https://github.com/kwooshung/Lomind/commit/0aeac229b58bbfee58bf25c02f514c9521114529))
