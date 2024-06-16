@@ -1,3 +1,7 @@
+## 🎉 0.0.20 `2024-06-17`
+### 🐛 Fix
+- 테스트를 수정하십시오 ([#5c0ec58](https://github.com/kwooshung/Lomind/commit/5c0ec58bfeb30df7e0904c5c64093a0f7c5a3891))
+
 ## 🎉 0.0.19 `2024-06-17`
 ### 🐛 Fix
 - 동적으로 버전 번호, 부정확 한, Windows 버전 번호는 매우 혼란 스럽습니다. ([#46ce0b4](https://github.com/kwooshung/Lomind/commit/46ce0b46bdda4387b77ce203dcf3f86bd2c3283e))

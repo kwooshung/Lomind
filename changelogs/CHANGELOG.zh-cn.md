@@ -1,3 +1,7 @@
+## 🎉 0.0.20 `2024-06-17`
+### 🐛 Fix
+- 修改测试 ([#5c0ec58](https://github.com/kwooshung/Lomind/commit/5c0ec58bfeb30df7e0904c5c64093a0f7c5a3891))
+
 ## 🎉 0.0.19 `2024-06-17`
 ### 🐛 Fix
 - 动态地获取版本编号不准确，Windows的版本编号非常混乱 ([#46ce0b4](https://github.com/kwooshung/Lomind/commit/46ce0b46bdda4387b77ce203dcf3f86bd2c3283e))
