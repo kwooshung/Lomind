@@ -1,3 +1,7 @@
+## 🎉 0.0.23 `2024-06-17`
+### 🐛 Fix
+- Repair export problem ([#8805750](https://github.com/kwooshung/Lomind/commit/8805750dcd7320b2483932dee4413cefe9a1ebbd))
+
 ## 🎉 0.0.22 `2024-06-17`
 ### ✨ Feature
 - The main logic of increasing anti -shake and throwing functions is from Lodash ([#938c599](https://github.com/kwooshung/Lomind/commit/938c599d56ae56c8075a796fc0aba8889686446b))
