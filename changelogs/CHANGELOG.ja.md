@@ -1,3 +1,7 @@
+## 🎉 0.0.14 `2024-06-17`
+### 🐛 Fix
+- 宣言ファイル ([#e6f8c3f](https://github.com/kwooshung/Lomind/commit/e6f8c3f53003af7ad0f306c3896cfc05f8c71546))
+
 ## 🎉 0.0.13 `2024-06-17`
 ### ✨ Feature
 - Windows11の判断が追加され、システムバージョンの判断が追加されました ([#67f6598](https://github.com/kwooshung/Lomind/commit/67f6598301b18799dd6da8ea827d9894026d8c7f))
