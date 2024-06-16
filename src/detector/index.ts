@@ -1,10 +1,11 @@
 import UAParser from 'ua-parser-js';
+import { BrowserInfo, OSInfo } from './interface';
 
 /**
  * @zh 探测器
  * @en Detector
  */
-class Detector {
+class detector {
   /**
    * @zh UA 字符串
    * @en UA string
@@ -125,4 +126,4 @@ class Detector {
  * @zh 导出探测器实例
  * @en Export detector instance
  */
-export default Detector;
+export default detector;

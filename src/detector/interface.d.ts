@@ -36,3 +36,5 @@ interface OSInfo {
    */
   osVersion: string;
 }
+
+export { BrowserInfo, OSInfo };
