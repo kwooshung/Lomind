@@ -1,3 +1,7 @@
+## 🎉 0.0.18 `2024-06-17`
+### 🐛 Fix
+- Windows 버전 번호로 얻은 하드 코딩 문제를 피하십시오. ([#6b1467a](https://github.com/kwooshung/Lomind/commit/6b1467ac3baef224547a87265d10b46fb6e9f49f))
+
 ## 🎉 0.0.17 `2024-06-17`
 ### 🐛 Fix
 - 초기화를 늘리고 오류의 일부를 수리하십시오 ([#0a866f8](https://github.com/kwooshung/Lomind/commit/0a866f8044ba0a05af4a07b123ce7be7af2491bb))
