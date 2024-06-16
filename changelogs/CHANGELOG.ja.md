@@ -1,3 +1,7 @@
+## 🎉 0.0.19 `2024-06-17`
+### 🐛 Fix
+- バージョン番号、不正確なバージョン番号を動的に取得すると、ウィンドウのバージョン数は非常に混oticとしています ([#46ce0b4](https://github.com/kwooshung/Lomind/commit/46ce0b46bdda4387b77ce203dcf3f86bd2c3283e))
+
 ## 🎉 0.0.18 `2024-06-17`
 ### 🐛 Fix
 - Windowsバージョン番号によって得られたハードコードの問題を避けてください ([#6b1467a](https://github.com/kwooshung/Lomind/commit/6b1467ac3baef224547a87265d10b46fb6e9f49f))
