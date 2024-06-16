@@ -1,3 +1,7 @@
+## 🎉 0.0.19 `2024-06-17`
+### 🐛 Fix
+- Dynamically obtain the version number, inaccurate, the version number of Windows is very chaotic ([#46ce0b4](https://github.com/kwooshung/Lomind/commit/46ce0b46bdda4387b77ce203dcf3f86bd2c3283e))
+
 ## 🎉 0.0.18 `2024-06-17`
 ### 🐛 Fix
 - Avoid the hard -coding problem obtained by the Windows version number ([#6b1467a](https://github.com/kwooshung/Lomind/commit/6b1467ac3baef224547a87265d10b46fb6e9f49f))

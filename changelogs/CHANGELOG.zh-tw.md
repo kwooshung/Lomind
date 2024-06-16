@@ -1,3 +1,7 @@
+## 🎉 0.0.19 `2024-06-17`
+### 🐛 Fix
+- 動態地獲取版本編號不准確，Windows的版本編號非常混亂 ([#46ce0b4](https://github.com/kwooshung/Lomind/commit/46ce0b46bdda4387b77ce203dcf3f86bd2c3283e))
+
 ## 🎉 0.0.18 `2024-06-17`
 ### 🐛 Fix
 - 避免通過Windows版本編號獲得的硬編碼問題 ([#6b1467a](https://github.com/kwooshung/Lomind/commit/6b1467ac3baef224547a87265d10b46fb6e9f49f))
