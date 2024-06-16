@@ -1,3 +1,7 @@
+## 🎉 0.0.15 `2024-06-17`
+### 🐛 Fix
+- 잘못된 오래된 테스트 로직을 수정하십시오 ([#2c0e309](https://github.com/kwooshung/Lomind/commit/2c0e309c8c1623b2689c45b2caffa687269b4914))
+
 ## 🎉 0.0.14 `2024-06-17`
 ### 🐛 Fix
 - 선언 파일 ([#e6f8c3f](https://github.com/kwooshung/Lomind/commit/e6f8c3f53003af7ad0f306c3896cfc05f8c71546))

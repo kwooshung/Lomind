@@ -17,8 +17,8 @@ describe('Detector', () => {
 
   it('应该正确获取操作系统信息', () => {
     const osInfo = detector.osInfo;
-    expect(osInfo).toHaveProperty('osName');
-    expect(osInfo).toHaveProperty('osVersion');
+    expect(osInfo).toHaveProperty('name');
+    expect(osInfo).toHaveProperty('version');
     expect(osInfo).toHaveProperty('platform');
   });
 
@@ -42,8 +42,8 @@ describe('Detector', () => {
     await new Promise(setImmediate);
 
     const osInfo = detector.osInfo;
-    expect(osInfo.osName).toBe('Windows 11');
-    expect(osInfo.osVersion).toBe('13.0.0');
+    expect(osInfo.name).toBe('Windows 11');
+    expect(osInfo.version).toBe('13.0.0');
 
     // 恢复原始的 userAgentData
     Object.defineProperty(navigator, 'userAgentData', { value: originalUserAgentData });
@@ -162,9 +162,9 @@ describe('Detector', () => {
   it('应该处理未知的操作系统名称和版本', () => {
     const originalGetOS = detector.parser.getOS;
     detector.parser.getOS = () => ({ name: undefined, version: undefined });
-    const osInfo = detector.getOSInfo();
-    expect(osInfo.osName).toBe('Unknown');
-    expect(osInfo.osVersion).toBe('Unknown');
+    const osInfo = (detector as any).getOSInfo();
+    expect(osInfo.name).toBe('');
+    expect(osInfo.version).toBe('');
     detector.parser.getOS = originalGetOS;
   });
 
@@ -172,9 +172,9 @@ describe('Detector', () => {
     const originalGetBrowser = detector.parser.getBrowser;
     detector.parser.getBrowser = () => ({});
     const browserInfo = (detector as any).getBrowserInfo();
-    expect(browserInfo.name).toBe('Unknown');
-    expect(browserInfo.fullVersion).toBe('Unknown');
-    expect(browserInfo.majorVersion).toBe('Unknown');
+    expect(browserInfo.name).toBe('');
+    expect(browserInfo.fullVersion).toBe('');
+    expect(browserInfo.majorVersion).toBe('');
     detector.parser.getBrowser = originalGetBrowser;
   });
 
