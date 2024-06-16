@@ -35,7 +35,8 @@ class detector {
     this.ua = navigator.userAgent;
     this.parser = new UAParser(this.ua);
     this.browserInfo = this.getBrowserInfo();
-    this.osInfo = this.getOSInfo();
+    this.osInfo = { name: '', version: '', platform: '' }; // 初始化 osInfo
+    this.initializeOSInfo();
   }
 
   /**
@@ -52,10 +53,10 @@ class detector {
   };
 
   /**
-   * @zh 获取操作系统信息
-   * @en Get OS information
+   * @zh 初始化操作系统信息
+   * @en Initialize OS information
    */
-  private getOSInfo = (): IOSInfo => {
+  private initializeOSInfo = () => {
     const os = this.parser.getOS();
     const cpu = this.parser.getCPU();
 
@@ -66,8 +67,8 @@ class detector {
       navigator['userAgentData'].getHighEntropyValues(['platformVersion']).then((ua: any) => {
         if (navigator['userAgentData'].platform === 'Windows') {
           const majorPlatformVersion = parseInt(ua.platformVersion.split('.')[0]);
-          if (majorPlatformVersion >= 13) {
-            name = 'Windows 11';
+          if (majorPlatformVersion >= 10) {
+            name = `Windows ${majorPlatformVersion}`;
             version = ua.platformVersion;
           }
         }
@@ -85,7 +86,13 @@ class detector {
         platform: cpu.architecture || ''
       };
     }
+  };
 
+  /**
+   * @zh 获取操作系统信息
+   * @en Get OS information
+   */
+  private getOSInfo = (): IOSInfo => {
     return this.osInfo;
   };
 
