@@ -1,3 +1,7 @@
+## 🎉 0.0.17 `2024-06-17`
+### 🐛 Fix
+- 增加初始化，修复错误的部分 ([#0a866f8](https://github.com/kwooshung/Lomind/commit/0a866f8044ba0a05af4a07b123ce7be7af2491bb))
+
 ## 🎉 0.0.16 `2024-06-17`
 ### 🐛 Fix
 - 修复由接口定义的应用程序 ([#6ca44ce](https://github.com/kwooshung/Lomind/commit/6ca44ce8c2ec084146a652fe4f89ebaf7cfde4e2))
