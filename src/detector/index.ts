@@ -68,7 +68,7 @@ class detector {
         if (navigator['userAgentData'].platform === 'Windows') {
           const majorPlatformVersion = parseInt(ua.platformVersion.split('.')[0]);
           if (majorPlatformVersion >= 10) {
-            name = `Windows ${majorPlatformVersion}`;
+            name = 'Windows 11';
             version = ua.platformVersion;
           }
         }
