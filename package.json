@@ -81,6 +81,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.17.21",
     "ua-parser-js": "^1.0.38"
   }
 }
