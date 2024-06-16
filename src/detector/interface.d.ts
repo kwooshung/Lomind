@@ -35,6 +35,11 @@ export interface IOSInfo {
    * @en OS version
    */
   osVersion: string;
+  /**
+   * @zh CPU 信息
+   * @en CPU info
+   */
+  platform: string;
 }
 
 /**

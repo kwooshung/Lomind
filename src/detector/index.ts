@@ -42,7 +42,7 @@ class detector {
    * @zh 获取浏览器信息
    * @en Get browser information
    */
-  private getBrowserInfo = (): BrowserInfo => {
+  private getBrowserInfo = (): IBrowserInfo => {
     const browser = this.parser.getBrowser();
     return {
       name: browser.name || 'Unknown',
@@ -55,12 +55,38 @@ class detector {
    * @zh 获取操作系统信息
    * @en Get OS information
    */
-  private getOSInfo = (): OSInfo => {
+  private getOSInfo = (): IOSInfo => {
     const os = this.parser.getOS();
-    return {
-      osName: os.name || 'Unknown',
-      osVersion: os.version || 'Unknown'
-    };
+    const cpu = this.parser.getCPU();
+
+    let osName = os.name || 'Unknown';
+    let osVersion = os.version || 'Unknown';
+
+    if (navigator['userAgentData'] && navigator['userAgentData'].getHighEntropyValues) {
+      navigator['userAgentData'].getHighEntropyValues(['platformVersion']).then((ua: any) => {
+        if (navigator['userAgentData'].platform === 'Windows') {
+          const majorPlatformVersion = parseInt(ua.platformVersion.split('.')[0]);
+          if (majorPlatformVersion >= 13) {
+            osName = 'Windows 11';
+            osVersion = ua.platformVersion;
+          }
+        }
+
+        this.osInfo = {
+          osName,
+          osVersion,
+          platform: cpu.architecture || 'Unknown'
+        };
+      });
+    } else {
+      this.osInfo = {
+        osName,
+        osVersion,
+        platform: cpu.architecture || 'Unknown'
+      };
+    }
+
+    return this.osInfo;
   };
 
   /**

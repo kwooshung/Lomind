@@ -21,6 +21,33 @@ describe('Detector', () => {
     expect(osInfo).toHaveProperty('osVersion');
   });
 
+  it('应该正确获取 Windows 11 的操作系统信息', async () => {
+    // 模拟 userAgentData 和 getHighEntropyValues
+    const originalUserAgentData = navigator['userAgentData'];
+    const mockUserAgentData = {
+      platform: 'Windows',
+      getHighEntropyValues: vi.fn().mockResolvedValue({
+        platformVersion: '13.0.0'
+      })
+    };
+    Object.defineProperty(navigator, 'userAgentData', {
+      value: mockUserAgentData,
+      writable: true
+    });
+
+    detector = new Detector();
+
+    // 等待异步操作完成
+    await new Promise(setImmediate);
+
+    const osInfo = detector.osInfo;
+    expect(osInfo.osName).toBe('Windows 11');
+    expect(osInfo.osVersion).toBe('13.0.0');
+
+    // 恢复原始的 userAgentData
+    Object.defineProperty(navigator, 'userAgentData', { value: originalUserAgentData });
+  });
+
   it('应该判断是否为指定浏览器', () => {
     // 模拟不同的 userAgent
     const originalUserAgent = navigator.userAgent;
@@ -59,6 +86,47 @@ describe('Detector', () => {
     expect(detector.compareBrowserVersion('91', '<=')).toBeTruthy();
     // 新增：测试非法操作符
     expect(detector.compareBrowserVersion('91.0.4472.124', 'invalid' as any)).toBeFalsy();
+    Object.defineProperty(navigator, 'userAgent', { value: originalUserAgent });
+  });
+
+  it('应该判断是否为指定系统', () => {
+    // 模拟不同的 userAgent
+    const originalUserAgent = navigator.userAgent;
+    Object.defineProperty(navigator, 'userAgent', {
+      value: 'Mozilla/5.0 (windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+      writable: true
+    });
+    detector = new Detector();
+    expect(detector.isOS('windows')).toBeTruthy();
+    expect(detector.isOS('MacOs')).toBeFalsy();
+    Object.defineProperty(navigator, 'userAgent', { value: originalUserAgent });
+  });
+
+  it('应该正确比较系统版本', () => {
+    const originalUserAgent = navigator.userAgent;
+    Object.defineProperty(navigator, 'userAgent', {
+      value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+      writable: true
+    });
+    detector = new Detector();
+    expect(detector.compareOSVersion('10', '=')).toBeTruthy();
+    expect(detector.compareOSVersion('9', '<')).toBeTruthy();
+    expect(detector.compareOSVersion('11', '>')).toBeTruthy();
+    expect(detector.compareOSVersion('11', '>=')).toBeTruthy();
+    expect(detector.compareOSVersion('10', '<=')).toBeTruthy();
+    // 新增：测试不同长度的版本号
+    expect(detector.compareOSVersion('10.0', '=')).toBeTruthy();
+    expect(detector.compareOSVersion('9.0', '<=')).toBeTruthy();
+    expect(detector.compareOSVersion('10.111', '>=')).toBeTruthy();
+    expect(detector.compareOSVersion('9.0', '<')).toBeTruthy();
+    expect(detector.compareOSVersion('9.0', '<')).toBeTruthy();
+    expect(detector.compareOSVersion('10.0', '<=')).toBeTruthy();
+    expect(detector.compareOSVersion('11.0', '>=')).toBeTruthy();
+    expect(detector.compareOSVersion('12.0.4473', '>=')).toBeTruthy();
+    expect(detector.compareOSVersion('10.0.4472', '>=')).toBeTruthy();
+    expect(detector.compareOSVersion('9', '<=')).toBeTruthy();
+    // 新增：测试非法操作符
+    expect(detector.compareOSVersion('91.', 'invalid' as any)).toBeFalsy();
     Object.defineProperty(navigator, 'userAgent', { value: originalUserAgent });
   });
 
@@ -102,7 +170,6 @@ describe('Detector', () => {
   it('应处理解析器返回空对象的情况', () => {
     const originalGetBrowser = detector.parser.getBrowser;
     detector.parser.getBrowser = () => ({});
-    // eslint-disable-next-line
     const browserInfo = (detector as any).getBrowserInfo();
     expect(browserInfo.name).toBe('Unknown');
     expect(browserInfo.fullVersion).toBe('Unknown');
