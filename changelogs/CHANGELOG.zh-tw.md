@@ -1,3 +1,7 @@
+## 🎉 0.0.24 `2024-06-20`
+### 💩 Optimization
+- 單個案例作為第三個參數增加了on change ([#70fc653](https://github.com/kwooshung/Lomind/commit/70fc653ee13a7f1b38157727bb7e1b89d59bbaa5))
+
 ## 🎉 0.0.23 `2024-06-17`
 ### 🐛 Fix
 - 維修出口問題 ([#8805750](https://github.com/kwooshung/Lomind/commit/8805750dcd7320b2483932dee4413cefe9a1ebbd))
