@@ -62,7 +62,7 @@ class Themes {
    * @en Constructor
    * @param {string} [initialTheme='auto'] 初始主题
    * @param {string[]} [initialThemes=['light', 'dark']] 初始主题列表
-   * @param {Function} [onChange] 主题改变时触发
+   * @param {(value: string, name: string) => void} [onChange=() => {}] 主题改变时触发
    */
   private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark'], onChange: (value: string, name: string) => void = () => {}) {
     this.valid = initialThemes;
@@ -147,11 +147,12 @@ class Themes {
    * @en Get singleton instance
    * @param {string} [initialTheme] 初始主题
    * @param {string[]} [initialThemes] 初始主题列表
+   * @param {(value: string, name: string) => void} [onChange=() => {}] 主题改变时触发
    * @returns {Themes} 主题管理器实例
    */
-  public static getInstance(initialTheme?: string, initialThemes?: string[]): Themes {
+  public static getInstance(initialTheme?: string, initialThemes?: string[], onChange: (value: string, name: string) => void = () => {}): Themes {
     if (!Themes.instance) {
-      Themes.instance = new Themes(initialTheme, initialThemes);
+      Themes.instance = new Themes(initialTheme, initialThemes, onChange);
     }
     return Themes.instance;
   }
