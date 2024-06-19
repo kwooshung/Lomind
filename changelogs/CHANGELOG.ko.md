@@ -1,3 +1,7 @@
+## 🎉 0.0.25 `2024-06-20`
+### 🔗 Dependency
+- 고쳐 쓰다 ([#c134115](https://github.com/kwooshung/Lomind/commit/c134115fa2e739cc31dac3ebc223f805c86bbfcb))
+
 ## 🎉 0.0.24 `2024-06-20`
 ### 💩 Optimization
 - 단일 케이스는 세 번째 매개 변수로 onchange를 증가시킵니다 ([#70fc653](https://github.com/kwooshung/Lomind/commit/70fc653ee13a7f1b38157727bb7e1b89d59bbaa5))

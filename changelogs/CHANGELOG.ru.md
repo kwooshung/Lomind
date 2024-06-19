@@ -1,3 +1,7 @@
+## 🎉 0.0.25 `2024-06-20`
+### 🔗 Dependency
+- обновлять ([#c134115](https://github.com/kwooshung/Lomind/commit/c134115fa2e739cc31dac3ebc223f805c86bbfcb))
+
 ## 🎉 0.0.24 `2024-06-20`
 ### 💩 Optimization
 - Одиночные случаи увеличиваются в качестве третьего параметра ([#70fc653](https://github.com/kwooshung/Lomind/commit/70fc653ee13a7f1b38157727bb7e1b89d59bbaa5))
