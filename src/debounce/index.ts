@@ -8,7 +8,7 @@ import { DebounceOptions } from './interface';
  * @param {DebounceOptions} [options={}] 配置项
  * @returns {(...args: any[]) => void} 防抖处理后的函数
  */
-const debounce = (func: (...args: any[]) => void, wait: number, options: DebounceOptions = {}) => {
+const debounce = (func: (...args: any[]) => void, wait: number, options: DebounceOptions = {}): ((...args: any[]) => void) => {
   let lastArgs: any; // 上一次调用的参数
   let lastThis: any; // 上一次调用的 this 上下文
   let maxWait: number | undefined; // 最大等待时间
@@ -41,7 +41,7 @@ const debounce = (func: (...args: any[]) => void, wait: number, options: Debounc
    * @param {number} time 当前时间
    * @returns {any} 函数调用结果
    */
-  const invokeFunc = (time: number) => {
+  const invokeFunc = (time: number): any => {
     const args = lastArgs; // 取出上一次调用的参数
     const thisArg = lastThis; // 取出上一次调用的上下文
     lastArgs = lastThis = undefined; // 重置 lastArgs 和 lastThis
@@ -84,7 +84,7 @@ const debounce = (func: (...args: any[]) => void, wait: number, options: Debounc
    * @param {number} time 当前时间
    * @returns {any} 函数调用结果
    */
-  const leadingEdge = (time: number) => {
+  const leadingEdge = (time: number): any => {
     lastInvokeTime = time; // 更新 lastInvokeTime
     timerId = startTimer(timerExpired, wait); // 启动定时器
     return leading ? invokeFunc(time) : result; // 如果 leading 为 true，立即调用函数，否则返回上一次结果
@@ -96,7 +96,7 @@ const debounce = (func: (...args: any[]) => void, wait: number, options: Debounc
    * @param {number} time 当前时间
    * @returns {number} 剩余等待时间
    */
-  const remainingWait = (time: number) => {
+  const remainingWait = (time: number): number => {
     const timeSinceLastCall = time - (lastCallTime || 0); // 距离上一次调用的时间
     const timeSinceLastInvoke = time - lastInvokeTime; // 距离上一次函数调用的时间
     const timeWaiting = wait - timeSinceLastCall; // 剩余等待时间
@@ -109,7 +109,7 @@ const debounce = (func: (...args: any[]) => void, wait: number, options: Debounc
    * @param {number} time 当前时间
    * @returns {boolean} 是否应该调用
    */
-  const shouldInvoke = (time: number) => {
+  const shouldInvoke = (time: number): boolean => {
     const timeSinceLastCall = time - (lastCallTime || 0); // 距离上一次调用的时间
     const timeSinceLastInvoke = time - lastInvokeTime; // 距离上一次函数调用的时间
     return lastCallTime === undefined || timeSinceLastCall >= wait || timeSinceLastCall < 0 || (maxing && timeSinceLastInvoke >= maxWait!);
@@ -120,7 +120,7 @@ const debounce = (func: (...args: any[]) => void, wait: number, options: Debounc
    * @en Function called when the timer expires
    * @returns {any} 函数调用结果
    */
-  const timerExpired = () => {
+  const timerExpired = (): any => {
     const time = Date.now(); // 获取当前时间
     if (shouldInvoke(time)) {
       // 如果应该调用函数
@@ -136,7 +136,7 @@ const debounce = (func: (...args: any[]) => void, wait: number, options: Debounc
    * @param {number} time 当前时间
    * @returns {any} 函数调用结果
    */
-  const trailingEdge = (time: number) => {
+  const trailingEdge = (time: number): any => {
     timerId = undefined; // 清除定时器ID
     if (trailing && lastArgs) {
       // 如果 trailing 为 true 且有上一次的调用参数

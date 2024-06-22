@@ -1,4 +1,4 @@
-import createTimer from '../_internal/createTimer';
+import { createTimer } from '../_internal';
 
 /**
  * @zh 创建一个延时器，并返回一个清除函数
