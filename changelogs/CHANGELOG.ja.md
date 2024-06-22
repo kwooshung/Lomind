@@ -1,3 +1,7 @@
+## 🎉 0.0.31 `2024-06-23`
+### 🐛 Fix
+- 注釈の問題を修復し、タイプを修復します ([#3b4c425](https://github.com/kwooshung/Lomind/commit/3b4c4254cef82471bc3f7c401dfd823d0032dce0))
+
 ## 🎉 0.0.30 `2024-06-23`
 ### 🐛 Fix
 - Cryptojsの導入を修正します ([#f1588a4](https://github.com/kwooshung/Lomind/commit/f1588a466c4dd66c8a8d2c35e3e0f406775bd224))
