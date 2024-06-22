@@ -1,4 +1,4 @@
-import createTimer from '../_internal/createTimer';
+import { createTimer } from '../_internal';
 
 /**
  * @zh 创建一个间隔执行的函数，并返回一个清除函数

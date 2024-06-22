@@ -1,3 +1,7 @@
+## 🎉 0.0.26 `2024-06-22`
+### ✨ Feature
+- 添加了常用的解碼和解碼編碼功能 ([#52b7a23](https://github.com/kwooshung/Lomind/commit/52b7a231c02cf9444a35b94cbc84a88c77e7758a))
+
 ## 🎉 0.0.25 `2024-06-20`
 ### 🔗 Dependency
 - 更新 ([#c134115](https://github.com/kwooshung/Lomind/commit/c134115fa2e739cc31dac3ebc223f805c86bbfcb))

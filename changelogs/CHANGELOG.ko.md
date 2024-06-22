@@ -1,3 +1,7 @@
+## 🎉 0.0.26 `2024-06-22`
+### ✨ Feature
+- 일반적으로 사용되는 디코딩 및 디코딩 인코딩 기능이 추가되었습니다 ([#52b7a23](https://github.com/kwooshung/Lomind/commit/52b7a231c02cf9444a35b94cbc84a88c77e7758a))
+
 ## 🎉 0.0.25 `2024-06-20`
 ### 🔗 Dependency
 - 고쳐 쓰다 ([#c134115](https://github.com/kwooshung/Lomind/commit/c134115fa2e739cc31dac3ebc223f805c86bbfcb))
