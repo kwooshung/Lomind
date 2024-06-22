@@ -1,3 +1,7 @@
+## 🎉 0.0.27 `2024-06-23`
+### ✨ Feature
+- Comprehensive additional secret algorithm ([#836ccb9](https://github.com/kwooshung/Lomind/commit/836ccb957a755900e538d81e28d7a69b40bd3939))
+
 ## 🎉 0.0.26 `2024-06-22`
 ### ✨ Feature
 - Added commonly used decoding and decoding encoding function ([#52b7a23](https://github.com/kwooshung/Lomind/commit/52b7a231c02cf9444a35b94cbc84a88c77e7758a))
