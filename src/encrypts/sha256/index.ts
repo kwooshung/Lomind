@@ -7,7 +7,7 @@ import CryptoJS from 'crypto-js';
  * @param {number} len 输出哈希值的长度，最大64
  * @returns {string} 根据指定长度的十六进制字符串
  */
-export const encrypt = (text: string, len: number = 64): string => {
+const encrypt = (text: string, len: number = 64): string => {
   // 计算 SHA-256 哈希值
   const hash = CryptoJS.SHA256(text);
   // 将哈希值转换为十六进制字符串

@@ -1,5 +1,6 @@
 /**
- * @zg 将文本进行 base64 编码
+ * @zh Base64 编码
+ * @en Base64 encode
  * @param {string} text 待加密文本
  * @returns {string} 加密后的文本
  */

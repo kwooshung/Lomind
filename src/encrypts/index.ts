@@ -1,3 +1,5 @@
+import TEncrypts from './interface';
+
 export { default as MD5 } from './md5';
 export { default as SHA1 } from './sha1';
 export { default as SHA256 } from './sha256';
@@ -14,7 +16,7 @@ import Base64 from './base64';
  * @zh 加密、哈希、编码
  * @en Encryption, hash, encoding
  */
-const Encrypts = {
+const Encrypts: TEncrypts = {
   MD5,
   SHA1,
   SHA256,
