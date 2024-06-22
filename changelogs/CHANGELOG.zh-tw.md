@@ -1,3 +1,7 @@
+## 🎉 0.0.27 `2024-06-23`
+### ✨ Feature
+- 全面的其他秘密算法 ([#836ccb9](https://github.com/kwooshung/Lomind/commit/836ccb957a755900e538d81e28d7a69b40bd3939))
+
 ## 🎉 0.0.26 `2024-06-22`
 ### ✨ Feature
 - 添加了常用的解碼和解碼編碼功能 ([#52b7a23](https://github.com/kwooshung/Lomind/commit/52b7a231c02cf9444a35b94cbc84a88c77e7758a))
