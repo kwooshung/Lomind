@@ -1,3 +1,7 @@
+## 🎉 0.0.30 `2024-06-23`
+### 🐛 Fix
+- cryptojs의 도입을 수정하십시오 ([#f1588a4](https://github.com/kwooshung/Lomind/commit/f1588a466c4dd66c8a8d2c35e3e0f406775bd224))
+
 ## 🎉 0.0.28 `2024-06-23`
 ### 🔗 Dependency
 - 의존성 업데이트 ([#b95a296](https://github.com/kwooshung/Lomind/commit/b95a296abdb80d2540f644feee44eb7859d71ae8))
