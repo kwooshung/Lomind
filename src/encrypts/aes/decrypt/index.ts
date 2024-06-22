@@ -1,4 +1,4 @@
-import { AES, enc, mode, pad } from 'crypto-js';
+import CryptoJS from 'crypto-js';
 import SHA1 from '../../sha1';
 
 /**
@@ -11,14 +11,14 @@ import SHA1 from '../../sha1';
 const decrypt = (text: string, key: string): string => {
   if (text) {
     const sha1 = SHA1(key, 32);
-    const keyBytes = enc.Utf8.parse(sha1.slice(16));
-    const ivBytes = enc.Utf8.parse(sha1.slice(0, 16));
-    const decrypted = AES.decrypt(text, keyBytes, {
+    const keyBytes = CryptoJS.enc.Utf8.parse(sha1.slice(16));
+    const ivBytes = CryptoJS.enc.Utf8.parse(sha1.slice(0, 16));
+    const decrypted = CryptoJS.AES.decrypt(text, keyBytes, {
       iv: ivBytes,
-      mode: mode.CBC,
-      padding: pad.Pkcs7
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
     });
-    return decrypted.toString(enc.Utf8);
+    return decrypted.toString(CryptoJS.enc.Utf8);
   }
 
   return '';

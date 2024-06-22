@@ -1,5 +1,5 @@
 import { cryptoLen } from '../../_internal';
-import { MD5, enc } from 'crypto-js';
+import CryptoJS from 'crypto-js';
 
 /**
  * @zh 使用 MD5 算法加密文本；注意MD5 已不被推荐用于高安全环境，同时 CryptoJS 在处理特殊字符时可能会出现问题，因此不推荐在安全性要求高的场景使用，推荐仅用于生成某些简单的字符串使用。
@@ -10,8 +10,8 @@ import { MD5, enc } from 'crypto-js';
  */
 const encrypt = (text: string, len: number = 32): string => {
   // 将输入的文本转换为UTF-8编码的字节数组，然后计算MD5哈希
-  const utf8Text = enc.Utf8.parse(text);
-  const hash = MD5(utf8Text).toString(enc.Hex);
+  const utf8Text = CryptoJS.enc.Utf8.parse(text);
+  const hash = CryptoJS.MD5(utf8Text).toString(CryptoJS.enc.Hex);
   return cryptoLen(hash, len, 32);
 };
 
