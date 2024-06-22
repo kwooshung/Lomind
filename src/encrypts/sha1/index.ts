@@ -1,5 +1,5 @@
 import { cryptoLen } from '../../_internal';
-import { SHA1, enc } from 'crypto-js';
+import CryptoJS from 'crypto-js';
 
 /**
  * @zh 对字符串进行 SHA-1 加密
@@ -10,9 +10,9 @@ import { SHA1, enc } from 'crypto-js';
  */
 export const encrypt = (text: string, len: number = 40): string => {
   // 计算 SHA-1 哈希值
-  const hash = SHA1(text);
+  const hash = CryptoJS.SHA1(text);
   // 将哈希值转换为十六进制字符串
-  const hex = hash.toString(enc.Hex);
+  const hex = hash.toString(CryptoJS.enc.Hex);
 
   return cryptoLen(hex, len, 40);
 };
