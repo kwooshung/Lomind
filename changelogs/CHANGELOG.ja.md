@@ -1,3 +1,7 @@
+## 🎉 0.0.26 `2024-06-22`
+### ✨ Feature
+- 一般的に使用されるデコードおよびデコードエンコード機能が追加されました ([#52b7a23](https://github.com/kwooshung/Lomind/commit/52b7a231c02cf9444a35b94cbc84a88c77e7758a))
+
 ## 🎉 0.0.25 `2024-06-20`
 ### 🔗 Dependency
 - 更新します ([#c134115](https://github.com/kwooshung/Lomind/commit/c134115fa2e739cc31dac3ebc223f805c86bbfcb))
