@@ -1,3 +1,7 @@
+## 🎉 0.0.31 `2024-06-23`
+### 🐛 Fix
+- 修复注释问题，修复类型 ([#3b4c425](https://github.com/kwooshung/Lomind/commit/3b4c4254cef82471bc3f7c401dfd823d0032dce0))
+
 ## 🎉 0.0.30 `2024-06-23`
 ### 🐛 Fix
 - 修复引入Cryptojs ([#f1588a4](https://github.com/kwooshung/Lomind/commit/f1588a466c4dd66c8a8d2c35e3e0f406775bd224))
