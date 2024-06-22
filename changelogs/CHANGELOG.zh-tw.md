@@ -1,3 +1,7 @@
+## 🎉 0.0.28 `2024-06-23`
+### 🔗 Dependency
+- 更新依賴 ([#b95a296](https://github.com/kwooshung/Lomind/commit/b95a296abdb80d2540f644feee44eb7859d71ae8))
+
 ## 🎉 0.0.27 `2024-06-23`
 ### ✨ Feature
 - 全面的其他秘密算法 ([#836ccb9](https://github.com/kwooshung/Lomind/commit/836ccb957a755900e538d81e28d7a69b40bd3939))
