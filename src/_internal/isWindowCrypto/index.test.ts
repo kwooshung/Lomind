@@ -1,4 +1,3 @@
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import isCrypto from '.';
 
 // 模拟 window 对象

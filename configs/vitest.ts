@@ -9,7 +9,17 @@ export default defineConfig({
     exclude: ['**/node_modules/**', '**/dist/**'],
     coverage: {
       include: ['src/**/*.{ts,tsx}'],
-      exclude: ['**/*.test.{ts,tsx}', '**/node_modules/**', '**/dist/**', '**/*.d.ts*', 'src/index.ts', 'src/encrypts/index.ts']
+      exclude: [
+        '**/*.test.{ts,tsx}',
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/*.d.ts*',
+        'src/index.ts',
+        'src/encrypts/index.ts',
+        'src/serializer/index.ts',
+        'src/datas/index.ts',
+        'src/datas/storage/index.ts'
+      ]
     }
   }
 });
