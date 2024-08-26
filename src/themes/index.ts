@@ -1,3 +1,5 @@
+import { datas } from '..';
+
 /**
  * @zh 主题管理器
  * @en Theme Manager
@@ -142,7 +144,7 @@ class Themes {
    */
   private getLocalStorageTheme(initialTheme: string = 'auto'): string {
     try {
-      const theme = localStorage.getItem(this.saveKey);
+      const theme = datas.Storage.Local.get(this.saveKey);
       return theme && this.valid.includes(theme) ? theme : initialTheme;
     } catch (error) {
       console.error('Failed to retrieve theme from local storage:', error);
