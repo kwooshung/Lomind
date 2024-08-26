@@ -67,9 +67,9 @@ class Themes {
    */
   private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark']) {
     this.valid = initialThemes;
+    this.mediaQueryList = window.matchMedia(Themes.DARK_THEME_QUERY);
     this.value = this.getLocalStorageTheme(initialTheme);
     this.name = this.value;
-    this.mediaQueryList = window.matchMedia(Themes.DARK_THEME_QUERY);
     this.isListenerAttached = false;
     this.onChange = () => {}; // 默认空函数
     this.init();
