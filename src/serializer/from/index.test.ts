@@ -61,6 +61,24 @@ describe('from 函数测试', () => {
     expect(result).toBe(BigInt('123456789012345678901234567890'));
   });
 
+  it('应该正确序列化一个 Number', () => {
+    const value = '1';
+    const result = from(value);
+    expect(result).toBe(1);
+  });
+
+  it('应该正确序列化一个 String', () => {
+    const value = '"1"';
+    const result = from(value);
+    expect(result).toBe('1');
+  });
+
+  it('应该正确序列化一个 Boolean', () => {
+    const value = 'true';
+    const result = from(value);
+    expect(result).toBe(true);
+  });
+
   it('应该正确反序列化一个 Symbol', () => {
     const serializedSymbol = '{"type":"Symbol","value":"Symbol(test)"}';
     const result = from(serializedSymbol);
