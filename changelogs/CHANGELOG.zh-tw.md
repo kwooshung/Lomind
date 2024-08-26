@@ -1,3 +1,7 @@
+## 🎉 0.0.34 `2024-08-26`
+### 🔄 Workflow
+- 更新依賴 ([#c2e9c39](https://github.com/kwooshung/Lomind/commit/c2e9c39be411fe688a86e9d43692de2447c7c7e6))
+
 ## 🎉 0.0.33 `2024-08-26`
 ### 🐛 Fix
 - 增加測試覆蓋範圍 ([#202ced9](https://github.com/kwooshung/Lomind/commit/202ced991266388e787103729a0fea80464c4061))
