@@ -174,7 +174,7 @@ class Themes {
    */
   public set(theme: string): void {
     this.value = this.valid.includes(theme) ? theme : 'light';
-    localStorage.setItem(this.saveKey, this.value);
+    datas.Storage.Local.set(this.saveKey, this.value);
 
     if (this.value === 'auto') {
       this.attachListener();

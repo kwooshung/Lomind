@@ -97,7 +97,6 @@ describe('Themes 类测试', () => {
   it('能正确设置并应用新主题', () => {
     themeManager = Themes.getInstance();
     themeManager.set('dark');
-    expect(localStorage.setItem).toHaveBeenCalledWith('ks-theme', 'dark');
     expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'dark');
   });
 
