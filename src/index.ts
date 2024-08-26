@@ -5,3 +5,5 @@ export { default as createInterval } from './createInterval';
 export { default as createTimeout } from './createTimeout';
 export { default as debounce } from './debounce';
 export { default as throttle } from './throttle';
+export { default as datas } from './datas';
+export { default as serializer } from './serializer';

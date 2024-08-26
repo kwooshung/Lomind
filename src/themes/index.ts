@@ -62,15 +62,14 @@ class Themes {
    * @en Constructor
    * @param {string} [initialTheme='auto'] 初始主题
    * @param {string[]} [initialThemes=['light', 'dark']] 初始主题列表
-   * @param {(value: string, name: string) => void} [onChange=() => {}] 主题改变时触发
    */
-  private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark'], onChange: (value: string, name: string) => void = () => {}) {
+  private constructor(initialTheme: string = 'auto', initialThemes: string[] = ['light', 'dark']) {
     this.valid = initialThemes;
     this.value = this.getLocalStorageTheme(initialTheme);
     this.name = this.value;
     this.mediaQueryList = window.matchMedia(Themes.DARK_THEME_QUERY);
     this.isListenerAttached = false;
-    this.onChange = onChange;
+    this.onChange = () => {}; // 默认空函数
     this.init();
   }
 
@@ -80,8 +79,12 @@ class Themes {
    * @returns {void} 无返回值
    */
   private init(): void {
-    this.set(this.value);
-    this.value === 'auto' && this.attachListener();
+    if (this.value === 'auto') {
+      this.attachListener();
+      this.handleSystemChange();
+    } else {
+      this.apply(this.value);
+    }
   }
 
   /**
@@ -134,12 +137,17 @@ class Themes {
   /**
    * @zh 从本地存储获取主题
    * @en Get theme from local storage
-   * @param {string} [initialThemes='auto'] 初始主题
+   * @param {string} [initialTheme='auto'] 初始主题
    * @returns {string} 主题
    */
-  private getLocalStorageTheme(initialThemes: string = 'auto'): string {
-    const theme = localStorage.getItem(this.saveKey);
-    return theme && this.valid.includes(theme) ? theme : initialThemes;
+  private getLocalStorageTheme(initialTheme: string = 'auto'): string {
+    try {
+      const theme = localStorage.getItem(this.saveKey);
+      return theme && this.valid.includes(theme) ? theme : initialTheme;
+    } catch (error) {
+      console.error('Failed to retrieve theme from local storage:', error);
+      return initialTheme;
+    }
   }
 
   /**
@@ -147,12 +155,11 @@ class Themes {
    * @en Get singleton instance
    * @param {string} [initialTheme] 初始主题
    * @param {string[]} [initialThemes] 初始主题列表
-   * @param {(value: string, name: string) => void} [onChange=() => {}] 主题改变时触发
    * @returns {Themes} 主题管理器实例
    */
-  public static getInstance(initialTheme?: string, initialThemes?: string[], onChange: (value: string, name: string) => void = () => {}): Themes {
+  public static getInstance(initialTheme?: string, initialThemes?: string[]): Themes {
     if (!Themes.instance) {
-      Themes.instance = new Themes(initialTheme, initialThemes, onChange);
+      Themes.instance = new Themes(initialTheme, initialThemes);
     }
     return Themes.instance;
   }
@@ -164,14 +171,14 @@ class Themes {
    * @returns {void} 无返回值
    */
   public set(theme: string): void {
-    this.value = theme;
-    localStorage.setItem(this.saveKey, theme);
+    this.value = this.valid.includes(theme) ? theme : 'light';
+    localStorage.setItem(this.saveKey, this.value);
 
-    if (theme === 'auto') {
+    if (this.value === 'auto') {
       this.attachListener();
       this.handleSystemChange();
     } else {
-      this.apply(theme);
+      this.apply(this.value);
     }
   }
 
@@ -222,9 +229,9 @@ class Themes {
    * @en Bind theme change event
    * @param {Function} [onChange] 主题改变时触发
    */
-  public bindChange = (onChange: (value: string, name: string) => void): void => {
+  public bindChange(onChange: (value: string, name: string) => void): void {
     this.onChange = onChange;
-  };
+  }
 
   /**
    * @zh 卸载主题管理器，主要是移除媒体查询监听，防止内存泄漏

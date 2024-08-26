@@ -1,4 +1,3 @@
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import isNode from '.';
 
 // 模拟 process 对象

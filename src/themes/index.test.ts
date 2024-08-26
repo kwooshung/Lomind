@@ -167,4 +167,32 @@ describe('Themes 类测试', () => {
     // 验证 removeEventListener 是否被正确调用
     expect(themeManager.isListenerAttached).toBeFalsy();
   });
+
+  it('Themes 构造函数处理 localStorage 错误', () => {
+    // 模拟 localStorage.getItem 抛出错误
+    global.localStorage.getItem = vi.fn(() => {
+      throw new Error('Test error');
+    });
+
+    themeManager = Themes.getInstance();
+    expect(themeManager.getValue()).toBe('auto');
+  });
+
+  it('handleSystemChange 方法在非 auto 模式下不会更改主题', () => {
+    themeManager = Themes.getInstance('dark');
+    themeManager['handleSystemChange'](); // 手动调用
+    expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'dark');
+  });
+
+  it('detachListener 未附加监听器时调用', () => {
+    themeManager = Themes.getInstance('dark');
+    themeManager.detachListener();
+    expect(themeManager.isListenerAttached).toBe(false);
+  });
+
+  it('getLocalStorageTheme 处理无效的存储值', () => {
+    global.localStorage.getItem = vi.fn(() => 'invalid-theme');
+    themeManager = Themes.getInstance('light');
+    expect(themeManager.getValue()).toBe('light');
+  });
 });

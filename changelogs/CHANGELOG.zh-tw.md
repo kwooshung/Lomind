@@ -1,3 +1,9 @@
+## 🎉 0.0.32 `2024-08-26`
+### 🐛 Fix
+- 修復主題以改善序列化器的序列化 ([#ad2f687](https://github.com/kwooshung/Lomind/commit/ad2f687d928fb0a403b3a2dca838d5e35ed47403))
+### 🆕 Add
+- 添加了本地存儲，會話存儲，cookie和序列化 ([#d8defd7](https://github.com/kwooshung/Lomind/commit/d8defd79a342814671d33eeb85280dce5a5f5f98))
+
 ## 🎉 0.0.31 `2024-06-23`
 ### 🐛 Fix
 - 修復註釋問題，修復類型 ([#3b4c425](https://github.com/kwooshung/Lomind/commit/3b4c4254cef82471bc3f7c401dfd823d0032dce0))

@@ -25,7 +25,7 @@ describe('debounce', () => {
     const debounced = debounce(func, 1000);
 
     debounced();
-    debounced.cancel();
+    debounced['cancel']();
     vi.advanceTimersByTime(1000);
     expect(func).not.toHaveBeenCalled();
   });
@@ -35,7 +35,7 @@ describe('debounce', () => {
     const debounced = debounce(func, 1000);
 
     debounced();
-    debounced.flush();
+    debounced['flush']();
     expect(func).toHaveBeenCalledTimes(1);
 
     vi.advanceTimersByTime(1000);
@@ -89,10 +89,10 @@ describe('debounce', () => {
     const debounced = debounce(func, 1000);
 
     debounced();
-    expect(debounced.pending()).toBe(true);
+    expect(debounced['pending']()).toBe(true);
 
     vi.advanceTimersByTime(1000);
-    expect(debounced.pending()).toBe(false);
+    expect(debounced['pending']()).toBe(false);
   });
 
   it('应该在 wait 为 0 时使用 requestAnimationFrame', () => {
@@ -138,7 +138,7 @@ describe('debounce', () => {
     const debounced = debounce(func, 0);
 
     debounced();
-    debounced.cancel();
+    debounced['cancel']();
     expect(func).not.toHaveBeenCalled();
   });
 
