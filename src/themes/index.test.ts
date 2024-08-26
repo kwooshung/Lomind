@@ -195,4 +195,20 @@ describe('Themes 类测试', () => {
     themeManager = Themes.getInstance('light');
     expect(themeManager.getValue()).toBe('light');
   });
+
+  it('Themes 构造函数处理 localStorage 错误', () => {
+    // 模拟 localStorage.getItem 抛出错误
+    global.localStorage.getItem = vi.fn(() => {
+      throw new Error('Test error');
+    });
+
+    themeManager = Themes.getInstance();
+    expect(themeManager.getValue()).toBe('auto');
+  });
+
+  it('如果设置的主题不存在，则默认使用 light', () => {
+    themeManager = Themes.getInstance();
+    themeManager.set('non-exist-theme');
+    expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'light');
+  });
 });

@@ -69,7 +69,7 @@ class Themes {
     this.valid = initialThemes;
     this.mediaQueryList = window.matchMedia(Themes.DARK_THEME_QUERY);
     this.value = this.getLocalStorageTheme(initialTheme);
-    this.name = this.value;
+    this.name = this.computeName(this.value);
     this.isListenerAttached = false;
     this.onChange = () => {}; // 默认空函数
     this.init();
@@ -96,9 +96,22 @@ class Themes {
    * @returns {void} 无返回值
    */
   private apply(theme: string): void {
-    this.name = this.valid.includes(theme) ? theme : 'light';
+    this.name = this.computeName(theme);
     document.documentElement.setAttribute('data-theme', this.name);
     this.onChange(this.value, this.name);
+  }
+
+  /**
+   * @zh 计算主题名称
+   * @en Compute theme name
+   * @param {string} theme 主题
+   * @returns {string} 主题名称
+   */
+  private computeName(theme: string): string {
+    if (theme === 'auto') {
+      return this.mediaQueryList.matches ? 'dark' : 'light';
+    }
+    return this.valid.includes(theme) ? theme : theme; // 允许任何新主题
   }
 
   /**
