@@ -1,3 +1,7 @@
+## 🎉 0.0.33 `2024-08-26`
+### 🐛 Fix
+- Increase test coverage ([#202ced9](https://github.com/kwooshung/Lomind/commit/202ced991266388e787103729a0fea80464c4061))
+
 ## 🎉 0.0.32 `2024-08-26`
 ### 🐛 Fix
 - Fix Themes to improve the serialization of Serializer ([#ad2f687](https://github.com/kwooshung/Lomind/commit/ad2f687d928fb0a403b3a2dca838d5e35ed47403))

@@ -223,4 +223,42 @@ describe('debounce', () => {
     vi.runAllTimers();
     expect(func).toHaveBeenCalledTimes(1);
   });
+
+  it('should not call the function if both leading and trailing are false', () => {
+    const func = vi.fn();
+    const debounced = debounce(func, 1000, { leading: false, trailing: false });
+
+    debounced();
+    vi.advanceTimersByTime(1000);
+    expect(func).not.toHaveBeenCalled();
+  });
+
+  it('should handle maxWait correctly when set and function is invoked', () => {
+    const func = vi.fn();
+    const debounced = debounce(func, 1000, { maxWait: 1500 });
+
+    debounced();
+    vi.advanceTimersByTime(1500);
+    expect(func).toHaveBeenCalledTimes(1);
+
+    debounced();
+    vi.advanceTimersByTime(1500);
+    expect(func).toHaveBeenCalledTimes(2);
+  });
+
+  it('should correctly handle requestAnimationFrame usage', () => {
+    const func = vi.fn();
+    const debounced = debounce(func, 0);
+
+    debounced();
+    expect(func).not.toHaveBeenCalled();
+
+    vi.runAllTimers();
+    expect(func).toHaveBeenCalledTimes(1);
+
+    debounced();
+    debounced();
+    vi.runAllTimers();
+    expect(func).toHaveBeenCalledTimes(2);
+  });
 });
