@@ -61,6 +61,24 @@ describe('to 函数测试', () => {
     expect(result).toBe('{"type":"BigInt","value":"123456789012345678901234567890"}');
   });
 
+  it('应该正确序列化一个 Number', () => {
+    const value = 1;
+    const result = to(value);
+    expect(result).toBe('1');
+  });
+
+  it('应该正确序列化一个 String', () => {
+    const value = '1';
+    const result = to(value);
+    expect(result).toBe('"1"');
+  });
+
+  it('应该正确序列化一个 Boolean', () => {
+    const value = true;
+    const result = to(value);
+    expect(result).toBe('true');
+  });
+
   it('应该正确序列化一个 Symbol', () => {
     const value = Symbol('test');
     const result = to(value);
