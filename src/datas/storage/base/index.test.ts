@@ -48,7 +48,6 @@ describe('存储基类', () => {
 
     setTimeout(() => {
       expect(storage.get('test')).toBeNull(); // 确认数据已过期并删除
-      (done as any)(); // 确保测试用例正确结束
     }, 20); // 延迟时间略大于过期时间
   });
 

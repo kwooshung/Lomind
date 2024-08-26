@@ -1,34 +1,123 @@
 import to from '.';
 
-describe('序列化 (To)', () => {
-  it('应该序列化一个基本对象', () => {
-    expect(to({ key: 'value' })).toBe('{"key":"value"}');
+describe('to 函数测试', () => {
+  it('应该正确序列化一个普通字符串', () => {
+    const str = 'hello';
+    const result = to(str);
+    expect(result).toBe('"hello"');
   });
 
-  it('应该序列化一个 Set', () => {
+  it('应该正确序列化一个 JSON 字符串', () => {
+    const jsonString = '{"key":"value"}';
+    const result = to(jsonString);
+    expect(result).toBe(JSON.stringify(jsonString));
+  });
+
+  it('应该正确序列化一个数字', () => {
+    const num = 123;
+    const result = to(num);
+    expect(result).toBe('123');
+  });
+
+  it('应该正确序列化一个布尔值', () => {
+    const bool = true;
+    const result = to(bool);
+    expect(result).toBe('true');
+  });
+
+  it('应该正确序列化 null', () => {
+    const value = null;
+    const result = to(value);
+    expect(result).toBe('{"type":"Null"}');
+  });
+
+  it('应该正确序列化 undefined', () => {
+    const value = undefined;
+    const result = to(value);
+    expect(result).toBe('{"type":"Undefined"}');
+  });
+
+  it('应该正确序列化 NaN', () => {
+    const value = NaN;
+    const result = to(value);
+    expect(result).toBe('{"type":"NaN"}');
+  });
+
+  it('应该正确序列化 Infinity', () => {
+    const value = Infinity;
+    const result = to(value);
+    expect(result).toBe('{"type":"Infinity"}');
+  });
+
+  it('应该正确序列化 -Infinity', () => {
+    const value = -Infinity;
+    const result = to(value);
+    expect(result).toBe('{"type":"-Infinity"}');
+  });
+
+  it('应该正确序列化一个 BigInt', () => {
+    const value = BigInt('123456789012345678901234567890');
+    const result = to(value);
+    expect(result).toBe('{"type":"BigInt","value":"123456789012345678901234567890"}');
+  });
+
+  it('应该正确序列化一个 Symbol', () => {
+    const value = Symbol('test');
+    const result = to(value);
+    expect(result).toBe('{"type":"Symbol","value":"Symbol(test)"}');
+  });
+
+  it('应该正确序列化一个函数', () => {
+    const fn = () => {};
+    const result = to(fn);
+
+    // 解析结果为对象
+    const parsedResult = JSON.parse(result);
+
+    // 确认类型是 Function
+    expect(parsedResult.type).toBe('Function');
+
+    // 去掉 value 中的所有空白字符并进行比较
+    expect(parsedResult.value.replace(/\s+/g, '')).toBe('()=>{}');
+  });
+
+  it('应该正确序列化一个正则表达式', () => {
+    const regExp = /abc/g;
+    const result = to(regExp);
+    expect(result).toBe('{"type":"RegExp","value":"/abc/g"}');
+  });
+
+  it('应该正确序列化一个日期', () => {
+    const date = new Date('2024-01-01T00:00:00.000Z');
+    const result = to(date);
+
+    expect(result).toBe('"2024-01-01T00:00:00.000Z"');
+  });
+
+  it('应该正确序列化一个 Set', () => {
     const set = new Set([1, 2, 3]);
-    expect(to(set)).toBe('{"type":"Set","value":[1,2,3]}');
+    const result = to(set);
+    expect(result).toBe('{"type":"Set","value":[1,2,3]}');
   });
 
-  it('应该序列化一个 Map', () => {
+  it('应该正确序列化一个 Map', () => {
     const map = new Map([
       ['key1', 'value1'],
       ['key2', 'value2']
     ]);
-    expect(to(map)).toBe('{"type":"Map","value":[["key1","value1"],["key2","value2"]]}');
+    const result = to(map);
+    expect(result).toBe('{"type":"Map","value":[["key1","value1"],["key2","value2"]]}');
   });
 
-  it('应该序列化一个 RegExp', () => {
-    const regExp = /abc/g;
-    expect(to(regExp)).toBe('{"type":"RegExp","value":"/abc/g"}');
-  });
-
-  it('应该序列化一个 Date', () => {
-    const date = new Date('2024-01-01T00:00:00.000Z');
-    expect(to(date)).toBe('"2024-01-01T00:00:00.000Z"');
-  });
-
-  it('应该序列化一个 null 值', () => {
-    expect(to(null)).toBe('null');
+  it('应该正确序列化一个嵌套对象', () => {
+    const nestedObj = {
+      key1: 'hello',
+      key2: 123,
+      key3: true,
+      key4: new Set([1, 2, 3]),
+      key5: { nestedKey: 'nestedValue' }
+    };
+    const result = to(nestedObj);
+    expect(result).toBe('{"key1":"hello","key2":123,"key3":true,"key4":{"type":"Set","value":[1,2,3]},"key5":{"nestedKey":"nestedValue"}}');
   });
 });
