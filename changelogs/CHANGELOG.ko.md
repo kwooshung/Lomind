@@ -1,3 +1,7 @@
+## 🎉 0.0.36 `2024-08-26`
+### 🐛 Fix
+- 로컬 스토리지를 데이터스 사용자 정의 기능으로 변경하십시오 ([#3fe2478](https://github.com/kwooshung/Lomind/commit/3fe24782e08f1e319d76188df28bceb908235862))
+
 ## 🎉 0.0.35 `2024-08-26`
 ### 🆕 Add
 - SSR 판단을 높입니다 ([#94ce486](https://github.com/kwooshung/Lomind/commit/94ce4863a39c5c623afd9bccaaa570a53df941d1))
