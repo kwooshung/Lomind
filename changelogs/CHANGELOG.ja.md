@@ -1,3 +1,7 @@
+## 🎉 0.0.39 `2024-08-26`
+### 🐛 Fix
+- テーマエラーを設定する問題を修復します ([#90aa84a](https://github.com/kwooshung/Lomind/commit/90aa84acd92bbea429f986d38d60a4fd37bf1a76))
+
 ## 🎉 0.0.38 `2024-08-26`
 ### 🐛 Fix
 - 修理部分はdata.storage.localクラスを使用してテーマスイッチング機能を実装しません ([#d85ca71](https://github.com/kwooshung/Lomind/commit/d85ca71c3cb9f1a8a9be0e36c25b0e04cc898736))

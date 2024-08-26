@@ -1,3 +1,7 @@
+## 🎉 0.0.39 `2024-08-26`
+### 🐛 Fix
+- 테마 오류를 설정하는 문제를 복구하십시오 ([#90aa84a](https://github.com/kwooshung/Lomind/commit/90aa84acd92bbea429f986d38d60a4fd37bf1a76))
+
 ## 🎉 0.0.38 `2024-08-26`
 ### 🐛 Fix
 - 수리 부품은 data.storage.local 클래스를 사용하여 테마 스위칭 기능을 구현하지 않습니다. ([#d85ca71](https://github.com/kwooshung/Lomind/commit/d85ca71c3cb9f1a8a9be0e36c25b0e04cc898736))
