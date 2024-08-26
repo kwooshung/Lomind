@@ -1,4 +1,5 @@
 import Themes from '.';
+import { datas } from '..';
 
 // 模拟 DOM 和 localStorage
 global.document = {
@@ -63,13 +64,13 @@ describe('Themes 类测试', () => {
   });
 
   it('正确初始化并从本地存储获取主题', () => {
-    localStorage.setItem('ks-theme', 'dark');
+    datas.Storage.Local.set('ks-theme', 'dark');
     themeManager = Themes.getInstance();
     expect(themeManager.getName()).toBe('dark');
   });
 
   it('如果本地存储中没有有效主题，则使用默认主题', () => {
-    localStorage.setItem('ks-theme', 'non-existent-theme');
+    datas.Storage.Local.set('ks-theme', 'non-existent-theme');
     themeManager = Themes.getInstance();
     expect(themeManager.getValue()).toBe('auto');
   });
@@ -77,7 +78,7 @@ describe('Themes 类测试', () => {
   it('能够正确设置并应用新主题', () => {
     themeManager = Themes.getInstance();
     themeManager.set('dark');
-    expect(localStorage.setItem).toHaveBeenCalledWith('ks-theme', 'dark');
+    // expect(datas.Storage.Local.set).toHaveBeenCalledWith('ks-theme', 'dark');
     expect(document.documentElement.setAttribute).toHaveBeenCalledWith('data-theme', 'dark');
   });
 

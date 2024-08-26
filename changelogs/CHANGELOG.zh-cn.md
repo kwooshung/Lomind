@@ -1,3 +1,7 @@
+## 🎉 0.0.36 `2024-08-26`
+### 🐛 Fix
+- 将localstorage更改为数据自定义功能 ([#3fe2478](https://github.com/kwooshung/Lomind/commit/3fe24782e08f1e319d76188df28bceb908235862))
+
 ## 🎉 0.0.35 `2024-08-26`
 ### 🆕 Add
 - 增加SSR判断 ([#94ce486](https://github.com/kwooshung/Lomind/commit/94ce4863a39c5c623afd9bccaaa570a53df941d1))
