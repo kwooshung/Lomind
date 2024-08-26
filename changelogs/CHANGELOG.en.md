@@ -1,3 +1,7 @@
+## 🎉 0.0.41 `2024-08-26`
+### 🐛 Fix
+- Fix the logic, value can not be an auto problem ([#443d2f8](https://github.com/kwooshung/Lomind/commit/443d2f8a526ae3dfcd14279e4ab2fb27559445f4))
+
 ## 🎉 0.0.40 `2024-08-26`
 ### 🐛 Fix
 - Currently, there are no issues with the code ([#6a97b73](https://github.com/kwooshung/Lomind/commit/6a97b732094fd494110a7e47ecf8082c5c13d347))
