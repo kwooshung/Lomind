@@ -173,8 +173,8 @@ class Themes {
    * @returns {void} 无返回值
    */
   public set(theme: string): void {
-    this.value = this.valid.includes(theme) ? theme : 'light';
-    datas.Storage.Local.set(this.saveKey, this.value);
+    this.value = theme;
+    datas.Storage.Local.set(this.saveKey, theme);
 
     if (this.value === 'auto') {
       this.attachListener();
