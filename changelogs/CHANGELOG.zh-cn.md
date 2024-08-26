@@ -1,3 +1,7 @@
+## 🎉 0.0.37 `2024-08-26`
+### 🐛 Fix
+- 修复序列化逻辑 ([#1e3d8fe](https://github.com/kwooshung/Lomind/commit/1e3d8fe8d073c172730dea675e0f8059eab19fd9))
+
 ## 🎉 0.0.36 `2024-08-26`
 ### 🐛 Fix
 - 将localstorage更改为数据自定义功能 ([#3fe2478](https://github.com/kwooshung/Lomind/commit/3fe24782e08f1e319d76188df28bceb908235862))
