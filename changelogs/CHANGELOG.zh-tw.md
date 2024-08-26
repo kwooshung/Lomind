@@ -1,3 +1,7 @@
+## 🎉 0.0.40 `2024-08-26`
+### 🐛 Fix
+- 目前，代碼沒有問題 ([#6a97b73](https://github.com/kwooshung/Lomind/commit/6a97b732094fd494110a7e47ecf8082c5c13d347))
+
 ## 🎉 0.0.39 `2024-08-26`
 ### 🐛 Fix
 - 修復設定主題錯誤的問題 ([#90aa84a](https://github.com/kwooshung/Lomind/commit/90aa84acd92bbea429f986d38d60a4fd37bf1a76))

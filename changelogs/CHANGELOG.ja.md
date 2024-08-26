@@ -1,3 +1,7 @@
+## 🎉 0.0.40 `2024-08-26`
+### 🐛 Fix
+- 現在、コードに問題はありません ([#6a97b73](https://github.com/kwooshung/Lomind/commit/6a97b732094fd494110a7e47ecf8082c5c13d347))
+
 ## 🎉 0.0.39 `2024-08-26`
 ### 🐛 Fix
 - テーマエラーを設定する問題を修復します ([#90aa84a](https://github.com/kwooshung/Lomind/commit/90aa84acd92bbea429f986d38d60a4fd37bf1a76))
