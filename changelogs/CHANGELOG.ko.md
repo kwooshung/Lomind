@@ -1,3 +1,9 @@
+## 🎉 0.0.32 `2024-08-26`
+### 🐛 Fix
+- 직렬 라이저의 직렬화를 향상시키기 위해 테마를 수정하십시오 ([#ad2f687](https://github.com/kwooshung/Lomind/commit/ad2f687d928fb0a403b3a2dca838d5e35ed47403))
+### 🆕 Add
+- 로컬 스토리지, 세션 저장, 쿠키 및 직렬화 추가 ([#d8defd7](https://github.com/kwooshung/Lomind/commit/d8defd79a342814671d33eeb85280dce5a5f5f98))
+
 ## 🎉 0.0.31 `2024-06-23`
 ### 🐛 Fix
 - 주석 문제를 수리하고 유형을 수리하십시오 ([#3b4c425](https://github.com/kwooshung/Lomind/commit/3b4c4254cef82471bc3f7c401dfd823d0032dce0))

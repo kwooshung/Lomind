@@ -1,3 +1,9 @@
+## 🎉 0.0.32 `2024-08-26`
+### 🐛 Fix
+- Fix Themes to improve the serialization of Serializer ([#ad2f687](https://github.com/kwooshung/Lomind/commit/ad2f687d928fb0a403b3a2dca838d5e35ed47403))
+### 🆕 Add
+- Added local storage, session storage, cookies and serialization ([#d8defd7](https://github.com/kwooshung/Lomind/commit/d8defd79a342814671d33eeb85280dce5a5f5f98))
+
 ## 🎉 0.0.31 `2024-06-23`
 ### 🐛 Fix
 - Repair the annotation problem, repair the type ([#3b4c425](https://github.com/kwooshung/Lomind/commit/3b4c4254cef82471bc3f7c401dfd823d0032dce0))
