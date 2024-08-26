@@ -1,3 +1,7 @@
+## 🎉 0.0.35 `2024-08-26`
+### 🆕 Add
+- 增加SSR判断 ([#94ce486](https://github.com/kwooshung/Lomind/commit/94ce4863a39c5c623afd9bccaaa570a53df941d1))
+
 ## 🎉 0.0.34 `2024-08-26`
 ### 🔄 Workflow
 - 更新依赖 ([#c2e9c39](https://github.com/kwooshung/Lomind/commit/c2e9c39be411fe688a86e9d43692de2447c7c7e6))
