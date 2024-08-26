@@ -1,3 +1,7 @@
+## 🎉 0.0.38 `2024-08-26`
+### 🐛 Fix
+- 修理部分はdata.storage.localクラスを使用してテーマスイッチング機能を実装しません ([#d85ca71](https://github.com/kwooshung/Lomind/commit/d85ca71c3cb9f1a8a9be0e36c25b0e04cc898736))
+
 ## 🎉 0.0.37 `2024-08-26`
 ### 🐛 Fix
 - シリアル化のロジックを修正します ([#1e3d8fe](https://github.com/kwooshung/Lomind/commit/1e3d8fe8d073c172730dea675e0f8059eab19fd9))
