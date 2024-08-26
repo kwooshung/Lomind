@@ -120,4 +120,49 @@ describe('to 函数测试', () => {
     const result = to(nestedObj);
     expect(result).toBe('{"key1":"hello","key2":123,"key3":true,"key4":{"type":"Set","value":[1,2,3]},"key5":{"nestedKey":"nestedValue"}}');
   });
+
+  it('应该正确处理循环引用对象', () => {
+    const obj: any = {};
+    obj.self = obj; // 创建循环引用
+    const result = to(obj);
+    expect(result).toBe('{}'); // 循环引用会被跳过
+  });
+
+  it('应该正确序列化一个空的 Set', () => {
+    const set = new Set();
+    const result = to(set);
+    expect(result).toBe('{"type":"Set","value":[]}');
+  });
+
+  it('应该正确序列化一个空的 Map', () => {
+    const map = new Map();
+    const result = to(map);
+    expect(result).toBe('{"type":"Map","value":[]}');
+  });
+
+  it('应该正确序列化一个嵌套的 Set', () => {
+    const nestedSet = new Set([1, new Set([2, 3])]);
+    const result = to(nestedSet);
+    expect(result).toBe('{"type":"Set","value":[1,{"type":"Set","value":[2,3]}]}');
+  });
+
+  it('应该正确序列化一个嵌套的 Map', () => {
+    const nestedMap = new Map([['key1', new Map([['nestedKey', 'nestedValue']])]]);
+    const result = to(nestedMap);
+    expect(result).toBe('{"type":"Map","value":[["key1",{"type":"Map","value":[["nestedKey","nestedValue"]]}]]}');
+  });
+
+  it('应该正确序列化一个包含对象的 Set', () => {
+    const obj = { key: 'value' };
+    const setWithObject = new Set([obj]);
+    const result = to(setWithObject);
+    expect(result).toBe('{"type":"Set","value":[{"key":"value"}]}');
+  });
+
+  it('应该正确序列化一个包含对象的 Map', () => {
+    const obj = { key: 'value' };
+    const mapWithObject = new Map([['objectKey', obj]]);
+    const result = to(mapWithObject);
+    expect(result).toBe('{"type":"Map","value":[["objectKey",{"key":"value"}]]}');
+  });
 });
