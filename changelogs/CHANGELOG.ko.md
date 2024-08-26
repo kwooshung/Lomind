@@ -1,3 +1,7 @@
+## 🎉 0.0.38 `2024-08-26`
+### 🐛 Fix
+- 수리 부품은 data.storage.local 클래스를 사용하여 테마 스위칭 기능을 구현하지 않습니다. ([#d85ca71](https://github.com/kwooshung/Lomind/commit/d85ca71c3cb9f1a8a9be0e36c25b0e04cc898736))
+
 ## 🎉 0.0.37 `2024-08-26`
 ### 🐛 Fix
 - 직렬화의 논리를 수정하십시오 ([#1e3d8fe](https://github.com/kwooshung/Lomind/commit/1e3d8fe8d073c172730dea675e0f8059eab19fd9))
