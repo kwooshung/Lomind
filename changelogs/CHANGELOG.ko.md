@@ -1,3 +1,7 @@
+## 🎉 0.0.42 `2024-09-02`
+### 🐛 Fix
+- CJS를 더 잘 지원하려면 package.json 구성을 수정하십시오 ([#3717355](https://github.com/kwooshung/Lomind/commit/371735591eb031b5ef006ca52b481f07cb82592e))
+
 ## 🎉 0.0.41 `2024-08-26`
 ### 🐛 Fix
 - 논리 수정, 값은 자동 문제가 될 수 없습니다. ([#443d2f8](https://github.com/kwooshung/Lomind/commit/443d2f8a526ae3dfcd14279e4ab2fb27559445f4))

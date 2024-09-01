@@ -73,7 +73,9 @@ class Base {
     }
 
     const data = storage.getItem(fullKey);
-    if (!data) return null;
+    if (!data) {
+      return null;
+    }
 
     return this.serializer.deserialize(data);
   }

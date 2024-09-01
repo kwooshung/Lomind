@@ -1,3 +1,7 @@
+## 🎉 0.0.42 `2024-09-02`
+### 🐛 Fix
+- Fix Package.json configuration to better support CJS ([#3717355](https://github.com/kwooshung/Lomind/commit/371735591eb031b5ef006ca52b481f07cb82592e))
+
 ## 🎉 0.0.41 `2024-08-26`
 ### 🐛 Fix
 - Fix the logic, value can not be an auto problem ([#443d2f8](https://github.com/kwooshung/Lomind/commit/443d2f8a526ae3dfcd14279e4ab2fb27559445f4))

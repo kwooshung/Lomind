@@ -1,3 +1,7 @@
+## 🎉 0.0.42 `2024-09-02`
+### 🐛 Fix
+- 修复软件包。json配置以更好地支持CJS ([#3717355](https://github.com/kwooshung/Lomind/commit/371735591eb031b5ef006ca52b481f07cb82592e))
+
 ## 🎉 0.0.41 `2024-08-26`
 ### 🐛 Fix
 - 修复逻辑，值不可能是自动问题 ([#443d2f8](https://github.com/kwooshung/Lomind/commit/443d2f8a526ae3dfcd14279e4ab2fb27559445f4))

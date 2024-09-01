@@ -10,6 +10,9 @@
     "outDir": "./dist",
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "declaration": true, // 生成类型定义文件
+    "declarationMap": true, // 生成类型映射文件（方便调试）
+    "emitDeclarationOnly": true, // 仅生成类型定义文件
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
   "include": ["./src", "./typings.d.ts"],
